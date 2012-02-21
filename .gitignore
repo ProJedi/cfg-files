@@ -1,13 +1,1 @@
-/bin
-/boot
-/dev
-/lib
-/lib64
-/opt
-/proc
-/run
-/sbin
-/sys
-/tmp
-/usr
-/var
+*
