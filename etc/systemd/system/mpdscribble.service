@@ -1,0 +1,10 @@
+[Unit]
+Description=Scrobbler for MPD
+After=mpd.service
+
+[Service]
+User=projedi
+ExecStart=/usr/bin/mpdscribble -D
+
+[Install]
+WantedBy=multi-user.target

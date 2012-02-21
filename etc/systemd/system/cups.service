@@ -1,0 +1,8 @@
+[Unit]
+Description=CUPS unit
+
+[Service]
+ExecStart=/usr/sbin/cupsd -F
+
+[Install]
+WantedBy=multi-user.target

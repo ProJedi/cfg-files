@@ -1,0 +1,9 @@
+[Unit]
+Description=JACK Audio Connection Kit server
+
+[Service]
+User=projedi
+ExecStart=/usr/bin/jackd -r -dalsa -djack_out -X seq
+
+[Install]
+WantedBy=multi-user.target

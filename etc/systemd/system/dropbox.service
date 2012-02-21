@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox daemon
+After=dhcpcd.service
+
+[Service]
+User=projedi
+ExecStart=/usr/bin/dropboxd
+
+[Install]
+WantedBy=multi-user.target

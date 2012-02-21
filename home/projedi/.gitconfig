@@ -1,0 +1,10 @@
+[color]
+	ui = always
+[user]
+	name = projedi
+	email = projedi666@gmail.com
+[alias]
+   c = commit -a
+   p = push origin
+   s = status
+   l = log --oneline --graph

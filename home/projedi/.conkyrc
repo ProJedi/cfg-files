@@ -1,0 +1,43 @@
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+music_player_interval 0.3
+
+double_buffer yes
+no_buffers yes
+
+use_xft yes
+xftfont Ubuntu:size=8
+
+own_window yes
+own_window_argb_visual yes
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar
+
+alignment bottom_right
+minimum_size 200
+maximum_width 800
+
+draw_shades no
+
+default_color grey
+
+TEXT
+
+CPU1: ${cpu cpu1}%${alignr}${cpugraph cpu1 20,80 00ff00 ff0000 -t}
+CPU2: ${cpu cpu2}%${alignr}${cpugraph cpu2 20,80 00ff00 ff0000 -t}
+CPU3: ${cpu cpu3}%${alignr}${cpugraph cpu3 20,80 00ff00 ff0000 -t}
+CPU4: ${cpu cpu4}%${alignr}${cpugraph cpu4 20,80 00ff00 ff0000 -t}
+RAM:  ${mem}${alignr}${memgraph 20,80 00ff00 ff0000 -t}
+Uptime: ${alignr}${uptime}
+Up speed: ${alignr}${upspeedgraph eth0 10,80}
+Down speed: ${alignr}${downspeedgraph eth0 10,80}
+Local IP: ${alignr}${addr eth0}
+
+Current song: ${alignr}${mpd_artist}
+              ${alignr}${mpd_title 80}
+Status(${mpd_status}): ${alignr}${mpd_elapsed}/${mpd_length}
+                       ${alignr}${mpd_bar 10,80}
+
+Dropbox: ${alignr}${exec dropbox status}

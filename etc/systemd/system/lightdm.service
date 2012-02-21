@@ -1,0 +1,9 @@
+[Unit]
+Description=LightDM Display Manager
+
+[Service]
+ExecStart=/usr/sbin/lightdm
+StandardOutput=syslog
+
+[Install]
+WantedBy=graphical.target

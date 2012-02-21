@@ -1,0 +1,9 @@
+[Unit]
+Description=Transmission client
+
+[Service]
+User=projedi
+ExecStart=/usr/bin/transmission-daemon -g /home/projedi/.config/transmission -f
+
+[Install]
+WantedBy=multi-user.target
