@@ -8,6 +8,7 @@ PATH=/home/projedi/maple14/bin:$PATH
 PATH=/home/projedi/.cabal/bin:$PATH
 PATH=/home/projedi/.bin:$PATH
 export PATH
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 alias update='yaourt -Syua --noconfirm'
 alias pacman='yaourt'
