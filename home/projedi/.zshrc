@@ -20,6 +20,11 @@ alias reboot='sudo systemctl reboot'
 alias mnt='sudo mount'
 alias umnt='sudo umount'
 alias sctl='sudo systemctl'
+#Is it possible to make them functions with literal parameter(b/c/..)?
+alias mntb='mount /dev/sdb1'
+alias mntc='mount /dev/sdc1'
+alias umntb='umount /dev/sdb1'
+alias umntc='umount /dev/sdc1'
 
 autoload omz
 zstyle :omz:style theme "default"
