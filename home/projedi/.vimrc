@@ -5,7 +5,6 @@ if has('gui_running')
    colorscheme solarized
    set guioptions="a"
    set guifont=Monaco\ 9
-   map <F9> :ToggleBG<CR>
    set lines=100 columns=500
    map <C-S-V> "*p
 endif
@@ -30,7 +29,7 @@ set shiftwidth=3
 set expandtab
 set foldmethod=syntax
 
-map <F2> <C-W>+
-map <F3> <C-W>-
-map <F4> <C-W><
-map <F5> <C-W>>
+map <F3> <C-W>+
+map <F4> <C-W>-
+map <F5> <C-W><
+map <F6> <C-W>>
