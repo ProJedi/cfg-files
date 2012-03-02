@@ -40,4 +40,4 @@ Current song: ${alignr}${mpd_artist}
 Status(${mpd_status}): ${alignr}${mpd_elapsed}/${mpd_length}
                        ${alignr}${mpd_bar 10,80}
 
-Dropbox: ${alignr}${exec dropbox status}
+Dropbox: ${alignr}${execi 5 dropbox status}
