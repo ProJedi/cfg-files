@@ -1,4 +1,7 @@
-export BROWSER=chromium-browser
+source /etc/zsh/zprofile
+
+export LANG="en_US.utf8"
+export BROWSER=uzbl-tabbed
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS="-Rc"
 export EDITOR="vim"
@@ -6,7 +9,6 @@ PATH=/usr/lib/colorgcc/bin:$PATH
 PATH=/home/projedi/matlab-r2011a/bin:$PATH
 PATH=/home/projedi/maple14/bin:$PATH
 PATH=/home/projedi/.cabal/bin:$PATH
-PATH=/home/projedi/.bin:$PATH
 export PATH
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
@@ -20,11 +22,6 @@ alias reboot='sudo systemctl reboot'
 alias mnt='sudo mount'
 alias umnt='sudo umount'
 alias sctl='sudo systemctl'
-#Is it possible to make them functions with literal parameter(b/c/..)?
-alias mntb='mount /dev/sdb1'
-alias mntc='mount /dev/sdc1'
-alias umntb='umount /dev/sdb1'
-alias umntc='umount /dev/sdc1'
 
 autoload omz
 zstyle :omz:style theme "default"

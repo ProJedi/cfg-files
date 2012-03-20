@@ -11,6 +11,7 @@ use_xft yes
 xftfont Ubuntu:size=8
 
 own_window yes
+own_window_type desktop
 own_window_argb_visual yes
 own_window_transparent yes
 own_window_hints undecorated,below,skip_taskbar
@@ -25,14 +26,23 @@ default_color grey
 
 TEXT
 
+FOLLOW THAT YOU USELESS PIECE OF CRAP
+6AM - waking up
+6AM-9AM - excercising
+9AM-5PM - studying
+5PM-9PM - coding
+9PM-12AM - time wasting
+12AM - sleeping down
+
 CPU1: ${cpu cpu1}%${alignr}${cpugraph cpu1 20,80 00ff00 ff0000 -t}
 CPU2: ${cpu cpu2}%${alignr}${cpugraph cpu2 20,80 00ff00 ff0000 -t}
 CPU3: ${cpu cpu3}%${alignr}${cpugraph cpu3 20,80 00ff00 ff0000 -t}
 CPU4: ${cpu cpu4}%${alignr}${cpugraph cpu4 20,80 00ff00 ff0000 -t}
 RAM:  ${mem}${alignr}${memgraph 20,80 00ff00 ff0000 -t}
+${exec acpi}
 Uptime: ${alignr}${uptime}
-Up speed: ${alignr}${upspeedgraph eth0 10,80}
-Down speed: ${alignr}${downspeedgraph eth0 10,80}
+Up speed: ${alignr}${upspeedf eth0}KiB${upspeedgraph eth0 10,80}
+Down speed: ${alignr}${downspeedf eth0}KiB${downspeedgraph eth0 10,80}
 Local IP: ${alignr}${addr eth0}
 
 Current song: ${alignr}${mpd_artist}
