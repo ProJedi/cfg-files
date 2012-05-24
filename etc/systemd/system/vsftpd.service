@@ -1,10 +1,10 @@
 [Unit]
-Description=Dropbox daemon
+Description=Very Secure FTP Daemon
 Requires=NetworkManager.service
 
 [Service]
-User=projedi
-ExecStart=/usr/bin/dropboxd
+ExecStart=/usr/sbin/vsftpd
+StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target

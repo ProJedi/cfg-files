@@ -1,6 +1,6 @@
 [Unit]
 Description=Scrobbler for MPD
-After=mpd.service
+Requires=mpd.service networkmanager.service
 
 [Service]
 User=projedi

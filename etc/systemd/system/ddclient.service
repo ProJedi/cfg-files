@@ -1,5 +1,6 @@
 [Unit]
 Description=DynDNS client
+Requires=NetworkManager.service
 
 [Service]
 ExecStart=/usr/sbin/ddclient -foreground

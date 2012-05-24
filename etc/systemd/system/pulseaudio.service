@@ -1,0 +1,9 @@
+[Unit]
+Description=PulseAudio server
+
+[Service]
+User=projedi
+ExecStart=/usr/bin/pulseaudio --start --daemonize=false
+
+[Install]
+WantedBy=multi-user.target
