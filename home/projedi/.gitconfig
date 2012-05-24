@@ -6,5 +6,5 @@
 [alias]
    c = commit -a
    p = push origin
-   s = status
+   s = status -uno
    l = log --oneline --graph
