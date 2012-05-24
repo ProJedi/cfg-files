@@ -1,7 +1,7 @@
 source /etc/zsh/zprofile
 
 export LANG="en_US.utf8"
-export BROWSER=uzbl-tabbed
+export BROWSER=uzbl-browser
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS="-Rc"
 export EDITOR="vim"
@@ -11,6 +11,7 @@ PATH=/home/projedi/maple14/bin:$PATH
 PATH=/home/projedi/.cabal/bin:$PATH
 export PATH
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+export C_INCLUDE_PATH=/usr/lib/jvm/java-6-openjdk/include
 
 alias update='yaourt -Syua --noconfirm'
 alias pacman='yaourt'
@@ -22,6 +23,7 @@ alias reboot='sudo systemctl reboot'
 alias mnt='sudo mount'
 alias umnt='sudo umount'
 alias sctl='sudo systemctl'
+alias view='vim -R'
 
 autoload omz
 zstyle :omz:style theme "default"

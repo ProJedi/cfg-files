@@ -1,15 +1,16 @@
+set nocompatible
 syntax on
+filetype plugin indent on
 
 if has('gui_running')
    set background=dark
    colorscheme solarized
    set guioptions="a"
-   set guifont=Monaco\ 9
+   set mouse-=a
+   set guifont=Anonymous\ Pro\ 9
    set lines=100 columns=500
    map <C-S-V> "*p
 endif
-
-filetype plugin on
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufEnter *.hamlet setlocal filetype=hamlet
@@ -18,11 +19,11 @@ au BufEnter *.julius setlocal filetype=julius
 au BufEnter *.scala setlocal filetype=scala
 
 set ruler
-set nocompatible
 set showcmd
 set number
 set hlsearch
 set incsearch
+set backspace=indent,eol,start
 set autoindent
 set tabstop=3
 set shiftwidth=3
