@@ -76,7 +76,7 @@
     "rpc-whitelist-enabled": false, 
     "scrape-paused-torrents-enabled": true, 
     "script-torrent-done-enabled": false, 
-    "script-torrent-done-filename": "/home/projedi", 
+    "script-torrent-done-filename": "conv.sh", 
     "seed-queue-enabled": false, 
     "seed-queue-size": 10, 
     "show-backup-trackers": false, 
