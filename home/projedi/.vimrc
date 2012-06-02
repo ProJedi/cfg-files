@@ -13,10 +13,6 @@ if has('gui_running')
 endif
 
 au BufEnter *.hsc setlocal filetype=haskell
-au BufEnter *.hamlet setlocal filetype=hamlet
-au BufEnter *.cassius setlocal filetype=cassius
-au BufEnter *.julius setlocal filetype=julius
-au BufEnter *.scala setlocal filetype=scala
 
 set ruler
 set showcmd
