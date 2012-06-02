@@ -29,5 +29,5 @@ alias tweet='t update'
 
 autoload omz
 zstyle :omz:style theme "default"
-plugins=(extract)
+#plugins=(extract)
 omz init
