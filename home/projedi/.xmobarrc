@@ -1,4 +1,4 @@
-Config { font = "xft:Anonymous Pro-8:antialias=false"
+Config { font = "xft:Anonymous Pro:size=8:antialias=false"
        , bgColor = "#002b36"
        , fgColor = "#839496"
        , border = NoBorder
@@ -23,7 +23,7 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
                                   , "-o", "<fc=#cb5b16>BAT</fc>"
                                   ] 10
                     , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
-                              , ("ru", "<fc=#dc322f>RU</fc>")
+                              , ("ru", "<fc=#d33682>RU</fc>")
                               ]
                     , Run Date "%d.%m - %a <fc=#268bd2>%H:%M</fc>"
                                "date" 10

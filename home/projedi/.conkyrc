@@ -8,7 +8,7 @@ double_buffer yes
 no_buffers yes
 
 use_xft yes
-xftfont Ubuntu:size=8
+xftfont Anonymous Pro:size=8:antialias=false
 
 alignment br
 gap_x 10
@@ -19,16 +19,16 @@ draw_borders no
 draw_outline no
 draw_graph_borders yes
 
-default_color grey
+default_color 839496
 
 TEXT
 
-${alignr}${cpugraph cpu1 20,80 00ff00 ff0000 -t}
-${alignr}${cpugraph cpu2 20,80 00ff00 ff0000 -t}
-${alignr}${cpugraph cpu3 20,80 00ff00 ff0000 -t}
-${alignr}${cpugraph cpu4 20,80 00ff00 ff0000 -t}
-${alignr}RAM: ${mem}
-${alignr}${memgraph 20,80 00ff00 ff0000 -t}
+${alignr}${cpugraph cpu1 20,80 85dd00 dc322f -t}
+${alignr}${cpugraph cpu2 20,80 85dd00 dc322f -t}
+${alignr}${cpugraph cpu3 20,80 85dd00 dc322f -t}
+${alignr}${cpugraph cpu4 20,80 85dd00 dc322f -t}
+${alignr}RAM: ${mem} + ${fs_used /tmp}
+${alignr}${memgraph 20,80 85dd00 dc322f -t}
 
 ${alignr}${wireless_essid wlan0}
 ${alignr}${upspeedf wlan0}KiB${upspeedgraph wlan0 10,80}
