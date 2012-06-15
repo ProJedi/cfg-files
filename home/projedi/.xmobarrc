@@ -1,0 +1,36 @@
+Config { font = "xft:Anonymous Pro-8:antialias=false"
+       , bgColor = "#002b36"
+       , fgColor = "#839496"
+       , border = NoBorder
+       , position = Top
+       , commands = [ Run StdinReader
+                    , Run Cpu [ "-t", "CPU: <total>"
+                              , "-L", "30", "-H", "80"
+                              , "-n", "#cb4b16", "-h", "#dc322f"
+                              , "-S", "True"
+                              ] 10
+                    , Run Memory [ "-t", "MEM: <usedratio>"
+                                 , "-L", "50", "-H", "80"
+                                 , "-n", "#cb4b16", "-h", "#dc322f"
+                                 , "-S", "True"
+                                 ] 10
+                    , Run Battery [ "-t", "<acstatus>: <left> - <timeleft>"
+                                  , "-L", "10", "-H", "40"
+                                  , "-l", "#dc322f", "-n", "#cb5b16"
+                                  , "-S", "True"
+                                  , "--", "-f", "ADP1/online"
+                                  , "-O", "AC"
+                                  , "-o", "<fc=#cb5b16>BAT</fc>"
+                                  ] 10
+                    , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
+                              , ("ru", "<fc=#dc322f>RU</fc>")
+                              ]
+                    , Run Date "%d.%m - %a <fc=#268bd2>%H:%M</fc>"
+                               "date" 10
+                    -- Install xmobar-git from AUR for that
+                    --, Run Volume "default" "Master" ["-t", "Vol: <volume>%"] 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | %kbd%"
+       }
