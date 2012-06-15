@@ -2,9 +2,10 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
+set background=dark
+colorscheme solarized
+
 if has('gui_running')
-   set background=dark
-   colorscheme solarized
    set guioptions="a"
    set mouse-=a
    set guifont=Anonymous\ Pro\ 9
