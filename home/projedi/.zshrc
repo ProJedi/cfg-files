@@ -7,8 +7,6 @@ export LESS="-Rc"
 export EDITOR="vim"
 PATH=/home/projedi/.gem/ruby/1.9.1/bin:$PATH
 PATH=/usr/lib/colorgcc/bin:$PATH
-PATH=/home/projedi/matlab-r2011a/bin:$PATH
-PATH=/home/projedi/maple14/bin:$PATH
 PATH=/home/projedi/.cabal/bin:$PATH
 export PATH
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
