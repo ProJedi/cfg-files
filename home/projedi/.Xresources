@@ -2,7 +2,7 @@ URxvt.depth: 32
 !URxvt.background: rgba:0000/0000/0000/dddd
 !URxvt.foreground: #AAAAAA
 URxvt.scrollBar: off
-URxvt.font: xft: Anonymous Pro:size=10:antialias=false
+URxvt.font: xft: Anonymous Pro-10
 URxvt.boldFont:
 URxvt.boldItalicFont:
 URxvt.perl-ext-common: default,clipboard,vtwheel

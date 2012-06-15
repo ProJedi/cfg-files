@@ -8,7 +8,7 @@ double_buffer yes
 no_buffers yes
 
 use_xft yes
-xftfont Anonymous Pro:size=8:antialias=false
+xftfont Anonymous Pro-8
 
 alignment br
 gap_x 10
@@ -21,6 +21,8 @@ draw_graph_borders yes
 
 default_color 839496
 
+if_up_strictness address
+
 TEXT
 
 ${alignr}${cpugraph cpu1 20,80 85dd00 dc322f -t}
@@ -30,9 +32,9 @@ ${alignr}${cpugraph cpu4 20,80 85dd00 dc322f -t}
 ${alignr}RAM: ${mem} + ${fs_used /tmp}
 ${alignr}${memgraph 20,80 85dd00 dc322f -t}
 
-${alignr}${wireless_essid wlan0}
-${alignr}${upspeedf wlan0}KiB${upspeedgraph wlan0 10,80}
-${alignr}${downspeedf wlan0}KiB${downspeedgraph wlan0 10,80}
+${if_up wlan0}${alignr}${wireless_essid wlan0} ${downspeedf wlan0} KiB: wlan0
+${endif}${if_up eth0} ${alignr}${downspeedf eth0} KiB: eth0 
+${endif}${if_up lo} ${alignr}${downspeedf lo} KiB: lo   ${endif}
 
 ${alignr}${mpd_artist}
 ${alignr}${mpd_title 80}
