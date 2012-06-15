@@ -78,7 +78,7 @@ myKeys conf = mkKeymap conf $
    , ("<XF86AudioRaiseVolume>", spawn "vol_up")
    , ("<Print>", spawn "scrot /tmp/shot-%Y-%m-%d.png")
    , ("M-S-l", spawn "xscreensaver-command -lock")
-   , ("M-p", spawn "dmenu_run")
+   , ("M-p", spawn "dmenu_run -fn 'Anonymous Pro-8' -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'")
    , ("M-<F4>", kill)
    , ("M-<Space>", sendMessage NextLayout)
    , ("M-r", refresh)
