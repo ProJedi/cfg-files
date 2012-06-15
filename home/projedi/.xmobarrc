@@ -1,4 +1,4 @@
-Config { font = "xft:Anonymous Pro:size=8:antialias=false"
+Config { font = "xft:Anonymous Pro-8"
        , bgColor = "#002b36"
        , fgColor = "#839496"
        , border = NoBorder
@@ -8,12 +8,12 @@ Config { font = "xft:Anonymous Pro:size=8:antialias=false"
                               , "-L", "30", "-H", "80"
                               , "-n", "#cb4b16", "-h", "#dc322f"
                               , "-S", "True"
-                              ] 10
+                              ] 30
                     , Run Memory [ "-t", "MEM: <usedratio>"
                                  , "-L", "50", "-H", "80"
                                  , "-n", "#cb4b16", "-h", "#dc322f"
                                  , "-S", "True"
-                                 ] 10
+                                 ] 30
                     , Run Battery [ "-t", "<acstatus>: <left> - <timeleft>"
                                   , "-L", "10", "-H", "40"
                                   , "-l", "#dc322f", "-n", "#cb5b16"
@@ -21,16 +21,14 @@ Config { font = "xft:Anonymous Pro:size=8:antialias=false"
                                   , "--", "-f", "ADP1/online"
                                   , "-O", "AC"
                                   , "-o", "<fc=#cb5b16>BAT</fc>"
-                                  ] 10
+                                  ] 50
                     , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
                               , ("ru", "<fc=#d33682>RU</fc>")
                               ]
-                    , Run Date "%d.%m - %a <fc=#268bd2>%H:%M</fc>"
-                               "date" 10
-                    -- Install xmobar-git from AUR for that
-                    --, Run Volume "default" "Master" ["-t", "Vol: <volume>%"] 10
+                    , Run Date "%d.%m - %a <fc=#268bd2>%H:%M</fc>" "date" 300
+                    , Run Volume "default" "Master" ["-t", "Vol: <volume>%"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | %kbd%"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %default:Master% | %date% | %kbd%"
        }

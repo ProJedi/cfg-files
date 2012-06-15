@@ -35,7 +35,7 @@ myStartupHook = return ()
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 
-main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
+main = xmonad =<< statusBar "~/.cabal/bin/xmobar" myPP toggleStrutsKey myConfig
 
 myPP = defaultPP { ppCurrent = xmobarColor "#268bd2" "" . wrap "[" "]"
                  , ppTitle   = xmobarColor "#268bd2" ""
