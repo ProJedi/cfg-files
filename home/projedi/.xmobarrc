@@ -4,31 +4,34 @@ Config { font = "xft:Anonymous Pro-8"
        , border = NoBorder
        , position = Top
        , commands = [ Run StdinReader
-                    , Run Cpu [ "-t", "CPU: <total>"
+                    , Run Cpu [ "-t", "C <total>"
                               , "-L", "30", "-H", "80"
                               , "-n", "#cb4b16", "-h", "#dc322f"
                               , "-S", "True"
                               ] 30
-                    , Run Memory [ "-t", "MEM: <usedratio>"
-                                 , "-L", "50", "-H", "80"
+                    , Run Memory [ "-t", "M <used>"
+                                 , "-L", "2000", "-H", "3000"
                                  , "-n", "#cb4b16", "-h", "#dc322f"
                                  , "-S", "True"
                                  ] 30
-                    , Run Battery [ "-t", "<acstatus>: <left> - <timeleft>"
+                    , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "10", "-H", "40"
                                   , "-l", "#dc322f", "-n", "#cb5b16"
                                   , "-S", "True"
                                   , "--", "-f", "ADP1/online"
                                   , "-O", "AC"
-                                  , "-o", "<fc=#cb5b16>BAT</fc>"
+                                  , "-o", "<fc=#d33682>BAT</fc>"
                                   ] 50
                     , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
                               , ("ru", "<fc=#d33682>RU</fc>")
                               ]
-                    , Run Date "%d.%m - %a <fc=#268bd2>%H:%M</fc>" "date" 300
-                    , Run Volume "default" "Master" ["-t", "Vol: <volume>%"] 10
+                    , Run Date "%a%d <fc=#268bd2>%H:%M</fc>" "date" 300
+                    , Run Volume "default" "Master" ["-t", "V <volume>%"] 30
+                    , Run MPD [ "-t", "<fc=#268bd2><title></fc> <statei>"
+                              , "--", "-P", "P", "-S", "S", "-Z", "Z"] 30
+                    , Run Com "dropbox" ["status"] "" 600
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %default:Master% | %date% | %kbd%"
+       , template = "%StdinReader% }{ |%dropbox%|%mpd%|%default:Master%|%cpu%|%memory%|%battery%|%date%|%kbd%"
        }
