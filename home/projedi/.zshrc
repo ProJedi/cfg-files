@@ -1,5 +1,6 @@
 source /etc/zsh/zprofile
 
+eval `dircolors ~/.dircolors`
 export LANG="en_US.utf8"
 export BROWSER=uzbl-browser
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
