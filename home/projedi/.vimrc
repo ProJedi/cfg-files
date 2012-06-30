@@ -2,6 +2,10 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
+let $PAGER=''
+runtime ftplugin/man.vim
+nmap K :Man <C-R>=expand("<cword>")<CR><CR>
+
 set background=dark
 colorscheme solarized
 
