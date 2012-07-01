@@ -1,0 +1,5 @@
+/boot
+!/boot/grub/grub.cfg
+#!/etc/*
+#!/usr/share/*
+#!/home/projedi/*
