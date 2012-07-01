@@ -1,10 +1,16 @@
 [color]
-	ui = always
+   ui = auto
 [user]
-	name = projedi
-	email = projedi666@gmail.com
+	name = Alexander Shabalin
+	email = shabalyn.a@gmail.com
 [alias]
    c = commit -a
    p = push origin
    s = status -uno
    l = log --oneline --graph
+	dt = difftool
+   d = diff --color=never
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
