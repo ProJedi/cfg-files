@@ -1,5 +1,13 @@
 /boot
 !/boot/grub/grub.cfg
-#!/etc/*
-#!/usr/share/*
-#!/home/projedi/*
+/bin
+/dev
+/sys
+/lib
+/lib64
+/opt
+/proc
+/run
+/sbin
+/tmp
+/var
