@@ -1,0 +1,15 @@
+#emulate sh -c 'source /etc/profile'
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH
+unset TERMCAP
+unset MANPATH
+
+if [[ -z "$DISPLAY" && -z "$SSH_TTY" && $(tty) = /dev/tty* ]]; then
+	# Drop root to console
+	if ! [[ $EUID -eq 0 ]]; then
+		cdm
+		if (( $? == 0 )); then
+			exit 0
+		fi
+	fi
+fi
