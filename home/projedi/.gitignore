@@ -47,3 +47,12 @@ Videos/
 .dropbox/
 .Xauthority
 .cache/
+.config/transmission
+!.config/transmission/settings.json
+.config/libimobiledevice
+.config/evince
+.config/chromium
+.config/Trolltech
+.config/Trolltech.conf
+.config/Nokia
+.config/vlc
