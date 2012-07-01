@@ -1,9 +1,0 @@
-[Unit]
-Description=Conky
-
-[Service]
-User=projedi
-ExecStart=/usr/bin/conky
-
-[Install]
-WantedBy=graphical.target
