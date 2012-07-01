@@ -5,13 +5,13 @@ set $*
 case "$1" in
    button/power)
       logger "ACPI action: power button($2 $3 $4)"
-      pm-hibernate
+      systemctl hibernate
       ;;
    button/sleep)
       logger "ACPI action: sleep button($2 $3 $4)"
       #Backlight control stops working. Yet! Starts working after
       #I put it into sleep and then hibernation. WTF?
-      #pm-suspend
+      systemctl suspend
       ;;
    ac_adapter)
       logger "ACPI action: adapter($2 $3 $4)"
