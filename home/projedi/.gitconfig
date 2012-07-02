@@ -6,7 +6,7 @@
 [alias]
    c = commit -a
    p = push origin
-   s = status -uno
+   s = status
    l = log --oneline --graph
 	dt = difftool
    d = diff --color=never
