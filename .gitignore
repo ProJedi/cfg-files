@@ -114,3 +114,4 @@
 /etc/host.conf
 /etc/iproute2
 /etc/ld.so*
+/usr
