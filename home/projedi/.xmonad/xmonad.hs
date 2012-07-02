@@ -21,7 +21,6 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , title =? "VideochatMainWindow" --> doFloat
-    , title =? "2299" --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     ]
@@ -37,8 +36,9 @@ toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 
 main = xmonad =<< statusBar "~/.cabal/bin/xmobar" myPP toggleStrutsKey myConfig
 
-myPP = defaultPP { ppCurrent = xmobarColor "#268bd2" "" . wrap "[" "]"
-                 , ppTitle   = xmobarColor "#268bd2" ""
+myPP = defaultPP { --ppCurrent = xmobarColor "#268bd2" "" . wrap "[" "]"
+                   ppCurrent = wrap "[" "]"
+                 --, ppTitle   = xmobarColor "#268bd2" ""
                  , ppVisible = wrap "(" ")"
                  }
 
