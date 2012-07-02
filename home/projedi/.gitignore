@@ -4,6 +4,9 @@ Distr/
 Music/
 Repos/
 Videos/
+Downloads/
+Private/
+Dropbox/
 .zsh_history
 .zcompdump
 .xsession*
@@ -56,3 +59,5 @@ Videos/
 .config/Trolltech.conf
 .config/Nokia
 .config/vlc
+.gimp-2.8
+.gtk-bookmarks
