@@ -61,3 +61,5 @@ Dropbox/
 .config/vlc
 .gimp-2.8
 .gtk-bookmarks
+.ssh/
+.local/
