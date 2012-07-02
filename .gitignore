@@ -114,4 +114,9 @@
 /etc/host.conf
 /etc/iproute2
 /etc/ld.so*
+/etc/printcap
+/etc/sysctl.conf
+/etc/dbus-1
+/etc/cups
+/etc/conf.d
 /usr
