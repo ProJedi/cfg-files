@@ -5,6 +5,7 @@ eval `dircolors ~/.dircolors`
 export LANG="en_US.utf8"
 export BROWSER=uzbl-browser
 export EDITOR="vim"
+PATH=/home/projedi/.bin:$PATH
 PATH=/home/projedi/.gem/ruby/1.9.1/bin:$PATH
 PATH=/usr/lib/colorgcc/bin:$PATH
 PATH=/home/projedi/.cabal/bin:$PATH
