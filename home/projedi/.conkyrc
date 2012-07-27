@@ -25,3 +25,5 @@ if_up_strictness address
 
 TEXT
 
+down ${downspeedf eth0} KiB
+up ${upspeedf eth0} KiB

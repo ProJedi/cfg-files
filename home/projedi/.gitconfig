@@ -7,7 +7,7 @@
    c = commit -a
    p = push origin
    s = status
-   l = log --oneline --graph
+   l = log --oneline --graph --color=never
 	dt = difftool
    d = diff --color=never
 [diff]

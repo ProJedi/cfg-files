@@ -18,6 +18,7 @@ if has('gui_running')
 endif
 
 au BufEnter *.hsc setlocal filetype=haskell
+au BufRead,BufNewFile *.pro set filetype=qmake
 
 set ruler
 set showcmd

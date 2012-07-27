@@ -13,7 +13,7 @@ Config { font = "xft:Anonymous Pro-8"
                                  , "-L", "2000", "-H", "3000"
                                  , "-n", "#cb4b16", "-h", "#dc322f"
                                  , "-S", "True"
-                                 ] 5
+                                 ] 30
                     , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "10", "-H", "40"
                                   , "-l", "#dc322f", "-n", "#cb5b16"

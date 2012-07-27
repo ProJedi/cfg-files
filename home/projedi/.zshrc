@@ -1,14 +1,20 @@
 source /etc/zsh/zprofile
 
+autoload omz
+zstyle :omz:style theme "default"
+omz init
+
 eval `dircolors ~/.dircolors`
 
 export LANG="en_US.utf8"
-export BROWSER=uzbl-browser
+export BROWSER=chromium
 export EDITOR="vim"
-PATH=/home/projedi/.bin:$PATH
-PATH=/home/projedi/.gem/ruby/1.9.1/bin:$PATH
+PATH=/usr/bin/vendor_perl:$PATH
+PATH=~/.android-sdks/platform-tools:~/.android-sdks/tools:$PATH
+PATH=~/.bin:$PATH
+PATH=~/.gem/ruby/1.9.1/bin:$PATH
 PATH=/usr/lib/colorgcc/bin:$PATH
-PATH=/home/projedi/.cabal/bin:$PATH
+PATH=~/.cabal/bin:$PATH
 export PATH
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 export C_INCLUDE_PATH=/usr/lib/jvm/java-6-openjdk/include
@@ -18,6 +24,7 @@ export PAGER="/bin/sh -c \"col -b |\
 export MANPAGER="/bin/sh -c \"col -b |\
    /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nonu' -\""
 
+alias nmcli='sudo nmcli'
 alias pacman='yaourt'
 alias pls='sudo'
 alias poweroff='sudo systemctl poweroff'
@@ -28,7 +35,5 @@ alias umnt='sudo umount'
 alias sctl='sudo systemctl'
 alias tweet='t update'
 alias less=/usr/share/vim/vim73/macros/less.sh
+alias l='ls -lah'
 
-autoload omz
-zstyle :omz:style theme "default"
-omz init
