@@ -5,12 +5,7 @@
 	email = shabalyn.a@gmail.com
 [alias]
    c = commit -a
-   p = push origin
+   p = push
    s = status
-   l = log --oneline --graph --color=never
-	dt = difftool
-   d = diff --color=never
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
+   l = log --oneline --graph
+   d = diff
