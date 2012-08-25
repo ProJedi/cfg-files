@@ -12,7 +12,7 @@ colord.conf
 conky/
 cron*
 crypttab
-wpa_supplicant.conf
+wpa_supplicant/
 xinetd.d/
 xdg/
 udev/
