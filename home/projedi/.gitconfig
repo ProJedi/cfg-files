@@ -4,7 +4,7 @@
 	name = Alexander Shabalin
 	email = shabalyn.a@gmail.com
 [alias]
-   c = commit -a
+   c = commit
    p = push
    s = status
    l = log --oneline --graph
