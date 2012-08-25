@@ -74,6 +74,8 @@ myKeys conf = mkKeymap conf $
    [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
    , ("M-u", spawn "uzbl-browser")
    , ("M-<D>", spawn "mpc toggle")
+   , ("M-S-<L>", spawn "mpc prev")
+   , ("M-S-<R>", spawn "mpc next")
    , ("<XF86AudioLowerVolume>", spawn "vol_down")
    , ("<XF86AudioRaiseVolume>", spawn "vol_up")
    , ("<Print>", spawn "scrot /tmp/shot-%Y-%m-%d.png")
