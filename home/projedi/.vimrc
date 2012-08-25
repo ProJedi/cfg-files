@@ -1,5 +1,5 @@
 set nocompatible
-call pathogen#infect("/home/projedi/.vim/bundle")
+call pathogen#infect("/home/projedi/.vimbundle")
 syntax on
 filetype plugin indent on
 
