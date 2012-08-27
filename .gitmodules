@@ -7,9 +7,6 @@
 [submodule "/home/projedi/.vimbundle/lushtags"]
 	path = /home/projedi/.vimbundle/lushtags
 	url = git://github.com/bitc/lushtags.git
-[submodule "/home/projedi/.vimbundle/syntastic"]
-	path = /home/projedi/.vimbundle/syntastic
-	url = git://github.com/bitc/syntastic.git
 [submodule "/home/projedi/.vimbundle/tagbar"]
 	path = /home/projedi/.vimbundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
