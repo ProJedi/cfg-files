@@ -1,6 +1,5 @@
 [Unit]
 Description=Transmission client
-Requires=NetworkManager.service
 
 [Service]
 User=projedi

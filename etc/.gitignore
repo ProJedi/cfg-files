@@ -104,3 +104,6 @@ odbc.ini
 odbcinst.ini
 OpenCL/
 xml/
+ifplugd/
+iftab
+network.d/
