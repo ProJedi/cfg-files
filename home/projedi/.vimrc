@@ -35,7 +35,6 @@ set foldmethod=syntax
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set statusline+=\ \[%{fugitive#head(7)}\]
-set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 set encoding=utf-8
 let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'default'
@@ -44,3 +43,4 @@ map <F3> <C-W>+
 map <F4> <C-W>-
 map <F5> <C-W><
 map <F6> <C-W>>
+nnoremap <F8> :noh<CR>
