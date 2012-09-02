@@ -102,3 +102,5 @@ mime.types
 mplayer/
 odbc.ini
 odbcinst.ini
+OpenCL/
+xml/

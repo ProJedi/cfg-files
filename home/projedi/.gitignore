@@ -73,3 +73,6 @@ GDrive/
 .ArobasMusic/
 .bin/
 .cloudprintauth
+.Skype
+.nv/
+.nvidia-settings-rc
