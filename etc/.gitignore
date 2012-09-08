@@ -107,3 +107,6 @@ xml/
 ifplugd/
 iftab
 network.d/
+dkms/
+vdpau_wrapper.cfg
+vbox/
