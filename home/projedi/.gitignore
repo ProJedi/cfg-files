@@ -47,7 +47,8 @@ GDrive/
 .macromedia/
 .dropbox/
 .Xauthority
-.cache/
+.cache
+.cache-backup_asd
 .gimp-2.8
 .gtk-bookmarks
 .ssh/

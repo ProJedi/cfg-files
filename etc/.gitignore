@@ -111,3 +111,4 @@ dkms/
 vdpau_wrapper.cfg
 vbox/
 udevil/
+rsyncd.conf
