@@ -3,10 +3,6 @@ call pathogen#infect("/home/projedi/.vimbundle")
 syntax on
 filetype plugin indent on
 
-"let $PAGER=''
-"runtime ftplugin/man.vim
-"nmap K :Man <C-R>=expand("<cword>")<CR><CR>
-
 set background=dark
 colorscheme solarized
 
@@ -20,6 +16,8 @@ endif
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufRead,BufNewFile *.pro set filetype=qmake
+
+let &viminfo='/home/projedi/.cache/.viminfo'
 
 set ruler
 set showcmd
