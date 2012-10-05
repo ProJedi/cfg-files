@@ -2,7 +2,7 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
        , bgColor = "#002b36"
        , fgColor = "#839496"
        , border = NoBorder
-       , position = Top
+       , position = Bottom
        , commands = [ Run StdinReader
                     , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "05", "-H", "10"

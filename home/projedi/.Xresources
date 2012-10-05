@@ -2,7 +2,7 @@ URxvt.depth: 32
 !URxvt.background: rgba:0000/0000/0000/dddd
 !URxvt.foreground: #AAAAAA
 URxvt.scrollBar: off
-URxvt.font: xft: Anonymous Pro-10
+URxvt.font: xft: Anonymous Pro-9:antialias=false
 URxvt.boldFont:
 URxvt.boldItalicFont:
 URxvt.perl-ext-common: default,clipboard,vtwheel
@@ -12,6 +12,11 @@ URxvt.scrollTtyOutput: true
 Urxvt.scrollWithBuffer: true
 Urxvt.scrollTtyKeypress: true
 Urxvt.saveLines: 5000
+
+!man coloring
+URxvt.colorIT:      #87af5f
+URxvt.colorBD:      #d7d7d7
+URxvt.colorUL:      #87afd7
 
 !*.color0: #000000
 !*.color1: #ff5555

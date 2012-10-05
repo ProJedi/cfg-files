@@ -6,6 +6,11 @@ import XMonad.Actions.NoBorders
 import XMonad.Util.Scratchpad
 import Data.Monoid
 import System.Exit
+import XMonad.Prompt
+import XMonad.Prompt.AppLauncher as AL
+import XMonad.Prompt.Shell
+import Data.List
+import XMonad.Layout.NoBorders
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -59,7 +64,7 @@ myConfig = defaultConfig {
         startupHook        = myStartupHook
 }  
 
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = smartBorders tiled ||| noBorders Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -70,17 +75,37 @@ myLayout = tiled ||| Mirror tiled ||| Full
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
+myXPConfig = XPC { font = "xft:Anonymous Pro-8:antialias=false"
+                 , bgColor = "#002b36"
+                 , fgColor = "#839496"
+                 , fgHLight = "#93a1a1"
+                 , bgHLight = "#586e75"
+                 , borderColor = "#839496"
+                 , promptBorderWidth = 0
+                 , promptKeymap = defaultXPKeymap
+                 , completionKey = xK_Tab
+                 , position = Bottom
+                 , height = 15
+                 , historySize = 256
+                 , historyFilter = id
+                 , defaultText = []
+                 , autoComplete = Nothing
+                 , showCompletionOnTab = False
+                 , searchPredicate = isInfixOf
+                 }
+
 myKeys conf = mkKeymap conf $
    [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
-   , ("M-u", spawn "uzbl-browser")
+   , ("M-u", AL.launchApp myXPConfig "evince")
    , ("M-<D>", spawn "mpc toggle")
    , ("M-S-<L>", spawn "mpc prev")
    , ("M-S-<R>", spawn "mpc next")
-   , ("<XF86AudioLowerVolume>", spawn "vol_down")
-   , ("<XF86AudioRaiseVolume>", spawn "vol_up")
+   , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")
+   , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
    , ("<Print>", spawn "scrot /tmp/shot-%Y-%m-%d.png")
    , ("M-S-l", spawn "xscreensaver-command -lock")
-   , ("M-p", spawn "dmenu_run -fn 'Anonymous Pro-8' -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'")
+   --, ("M-p", spawn "dmenu_run -fn 'Anonymous Pro-8' -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'")
+   , ("M-p", shellPrompt myXPConfig)
    , ("M-<F4>", kill)
    , ("M-<Space>", sendMessage NextLayout)
    , ("M-r", refresh)
@@ -92,7 +117,7 @@ myKeys conf = mkKeymap conf $
    , ("M-t", withFocused $ windows . W.sink)
    , ("M-,", sendMessage (IncMasterN 1))
    , ("M-.", sendMessage (IncMasterN (-1)))
-   , ("M-g", withFocused toggleBorder)
+   --, ("M-g", withFocused toggleBorder)
    , ("M-S-q", io (exitWith ExitSuccess))
    , ("M-q", spawn "xmonad --recompile; xmonad --restart")
    , ("<F12>", scratchpadSpawnActionTerminal "urxvtc")
