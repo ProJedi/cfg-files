@@ -1,6 +1,5 @@
 [Unit]
 Description=Music Player Daemon
-Requires=pulseaudio.service
 
 [Service]
 User=projedi

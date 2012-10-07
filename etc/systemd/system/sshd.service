@@ -1,9 +1,0 @@
-[Unit]
-Description=SSH Daemon
-
-[Service]
-User=projedi
-ExecStart=/usr/sbin/sshd -D
-
-[Install]
-WantedBy=multi-user.target
