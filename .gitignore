@@ -1,7 +1,6 @@
 *.swp
 *.lock
 /boot
-!/boot/grub/grub.cfg
 /bin
 /dev
 /sys
