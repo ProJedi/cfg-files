@@ -18,20 +18,25 @@ case "$1" in
       ;;
    button/lid)
       logger "ACPI action: lid($2 $3 $4)"
+      case "$3" in
+         close)
+            systemctl suspend
+            ;;
+      esac
       ;;
    video/brightnessup)
       path=/sys/class/backlight/nv_backlight
       max=`cat $path/max_brightness`
       cur=`cat $path/brightness`
       if [[ $cur -lt $max ]]; then
-         echo $((cur + 10)) > $path/brightness
+         echo $((cur + 5)) > $path/brightness
       fi
       ;;
    video/brightnessdown)
       path=/sys/class/backlight/nv_backlight
       cur=`cat $path/brightness`
       if [[ $cur -gt 0 ]]; then
-         echo $((cur - 10)) > $path/brightness
+         echo $((cur - 5)) > $path/brightness
       fi
       ;;
    *)
