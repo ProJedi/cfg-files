@@ -1,8 +1,15 @@
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialis: 0
+Xft.rgba: rgb
+
 URxvt.depth: 32
 !URxvt.background: rgba:0000/0000/0000/dddd
 !URxvt.foreground: #AAAAAA
 URxvt.scrollBar: off
-URxvt.font: xft: Anonymous Pro-9:antialias=false
+URxvt.font: xft: Anonymous Pro-10:antialias=false
 URxvt.boldFont:
 URxvt.boldItalicFont:
 URxvt.perl-ext-common: default,clipboard,vtwheel
