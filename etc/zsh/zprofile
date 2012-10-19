@@ -1,5 +1,1 @@
-#emulate sh -c 'source /etc/profile'
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-export PATH
-unset TERMCAP
-unset MANPATH
+emulate sh -c 'source /etc/profile'

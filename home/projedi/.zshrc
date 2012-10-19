@@ -25,7 +25,6 @@ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 export PAGER=/usr/bin/less
 export MANPAGER=$PAGER
 
-alias pacman='yaourt'
 alias pls='sudo'
 alias poweroff='sudo systemctl poweroff'
 alias reboot='sudo systemctl reboot'
