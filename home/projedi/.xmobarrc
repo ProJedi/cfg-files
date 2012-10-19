@@ -12,9 +12,8 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
                                   , "-O", "AC"
                                   , "-o", "<fc=#d33682>BAT</fc>"
                                   ] 300
-                    , Run Volume "default" "Master" ["-t", "V <volume>%"] 300
-                    , Run MPD [ "-t", "<fc=#268bd2><title></fc> <statei>"
-                              , "--", "-P", "P", "-S", "S", "-Z", "Z"] 20
+                    , Run Com "mpc" [ "current" ] "mpd" 200
+                    , Run Com "volume" [] "volume" 300
                     , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
                               , ("ru", "<fc=#d33682>RU</fc>")
                               ]
@@ -22,5 +21,5 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ |%mpd%|%default:Master%|%battery%|%date%|%kbd%"
+       , template = "%StdinReader% }{ |%mpd%|%volume%|%battery%|%date%|%kbd%"
        }
