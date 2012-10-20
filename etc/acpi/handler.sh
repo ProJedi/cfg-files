@@ -29,14 +29,14 @@ case "$1" in
       max=`cat $path/max_brightness`
       cur=`cat $path/brightness`
       if [[ $cur -lt $max ]]; then
-         echo $((cur + 5)) > $path/brightness
+         echo $((cur + 1)) > $path/brightness
       fi
       ;;
    video/brightnessdown)
       path=/sys/class/backlight/nv_backlight
       cur=`cat $path/brightness`
       if [[ $cur -gt 0 ]]; then
-         echo $((cur - 5)) > $path/brightness
+         echo $((cur - 1)) > $path/brightness
       fi
       ;;
    *)
