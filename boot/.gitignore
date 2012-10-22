@@ -1,0 +1,4 @@
+initramfs-linux-fallback.img
+initramfs-linux.img
+syslinux/
+vmlinuz-linux

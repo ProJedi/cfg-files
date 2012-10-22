@@ -1,6 +1,6 @@
 *.swp
 *.lock
-/boot
+#/boot
 /bin
 /dev
 /sys
