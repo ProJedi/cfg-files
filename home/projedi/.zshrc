@@ -1,6 +1,7 @@
 source /etc/zsh/zprofile
 
 ZSH=~projedi/.oh-my-zsh
+#TODO: Add return code
 ZSH_THEME="eastwood"
 # CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
@@ -13,8 +14,6 @@ eval `dircolors ~projedi/.dircolors`
 export LANG="en_US.utf8"
 export BROWSER=chromium
 export EDITOR="vim"
-PATH=/usr/bin/vendor_perl:$PATH
-PATH=~projedi/.android-sdks/platform-tools:~/.android-sdks/tools:$PATH
 PATH=~projedi/.bin:$PATH
 PATH=/usr/lib/colorgcc/bin:$PATH
 PATH=~projedi/.cabal/bin:$PATH
