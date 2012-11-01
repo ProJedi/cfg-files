@@ -3,8 +3,8 @@ call pathogen#infect("/home/projedi/.vimbundle")
 syntax on
 filetype plugin indent on
 
-set background=dark
-colorscheme solarized
+" set background=dark
+colorscheme jellybeans
 
 if has('gui_running')
    set guioptions="a"
@@ -18,6 +18,12 @@ au BufEnter *.hsc setlocal filetype=haskell
 au BufRead,BufNewFile *.pro set filetype=qmake
 
 let &viminfo='/home/projedi/.cache/.viminfo'
+
+" Don't screw up folds when inserting text that might affect them, until
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 set ruler
 set showcmd

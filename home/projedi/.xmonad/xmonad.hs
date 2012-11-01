@@ -24,8 +24,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
 
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , title =? "VideochatMainWindow" --> doFloat
+    [ title =? "VideochatMainWindow" --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     ]
@@ -41,9 +40,7 @@ toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 
 main = xmonad =<< statusBar "/usr/bin/xmobar" myPP toggleStrutsKey myConfig
 
-myPP = defaultPP { --ppCurrent = xmobarColor "#268bd2" "" . wrap "[" "]"
-                   ppCurrent = wrap "[" "]"
-                 --, ppTitle   = xmobarColor "#268bd2" ""
+myPP = defaultPP { ppCurrent = wrap "[" "]"
                  , ppVisible = wrap "(" ")"
                  }
 
@@ -53,8 +50,8 @@ myConfig = defaultConfig {
         borderWidth        = 1,
         modMask            = mod4Mask,
         workspaces         = ["1","2","3","4","5","6","7","8","9"],
-        normalBorderColor  = "#073642",
-        focusedBorderColor = "#586e75",
+        normalBorderColor  = "#404040",
+        focusedBorderColor = "#888888",
         keys               = myKeys,
         mouseBindings      = myMouseBindings,
         layoutHook         = myLayout,
@@ -76,11 +73,11 @@ myLayout = smartBorders tiled ||| noBorders Full
      delta   = 3/100
 
 myXPConfig = XPC { font = "xft:Anonymous Pro-8:antialias=false"
-                 , bgColor = "#002b36"
-                 , fgColor = "#839496"
-                 , fgHLight = "#93a1a1"
-                 , bgHLight = "#586e75"
-                 , borderColor = "#839496"
+                 , bgColor = "#151515"
+                 , fgColor = "#888888"
+                 , fgHLight = "#e8e8d3"
+                 , bgHLight = "#404040"
+                 , borderColor = "#151515"
                  , promptBorderWidth = 0
                  , promptKeymap = defaultXPKeymap
                  , completionKey = xK_Tab
