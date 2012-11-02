@@ -18,7 +18,7 @@ Urxvt.saveLines: 5000
 
 URxvt.background:            #151515
 URxvt.foreground:            #888888
-URxvt.cursorColor:           #b0d0f0
+URxvt.cursorColor:           #888888
 URxvt.pointerColorBackground:#151515
 URxvt.pointerColorForeground:#e8e8d3
 
@@ -31,24 +31,24 @@ URxvt.color1:                #cf6a4c
 URxvt.color9:                #902020
 
 !! green dark/light
-URxvt.color2:                #2d7067
-URxvt.color10:               #437019
+URxvt.color2:               #437019
+URxvt.color10:                #70b950
 
 !! yellow dark/light
-URxvt.color3:                #dad085
-URxvt.color11:               #ffb964
+URxvt.color3:               #ffb964
+URxvt.color11:                #dad085
 
 !! blue dark/light
-URxvt.color4:                #8197bf
-URxvt.color12:               #8fbfdc
+URxvt.color4:                #2b5b77
+URxvt.color12:               #7697d6
 
 !! magenta dark/light
 URxvt.color5:                #dd093
 URxvt.color13:               #f0a0c0
 
 !! cyan dark/light
-URxvt.color6:                #80a090
-URxvt.color14:               #c6b6ee
+URxvt.color6:                #c6b6ee
+URxvt.color14:               #8fbfdc
 
 !! white dark/light
 URxvt.color7:                #888888

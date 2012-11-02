@@ -6,18 +6,18 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
        , commands = [ Run StdinReader
                     , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "10", "-H", "95"
-                                  , "-l", "#902020", "-h", "#437019"
+                                  , "-l", "#cf6a4c", "-h", "#70b950"
                                   , "-S", "True"
                                   , "--", "-f", "ADP1/online"
                                   , "-O", "AC"
-                                  , "-o", "<fc=#902020>BAT</fc>"
+                                  , "-o", "<fc=#cf6a4c>BAT</fc>"
                                   ] 300
                     , Run Com "mpc" [ "current" ] "mpd" 200
                     , Run Com "volume" [] "volume" 300
-                    , Run Kbd [ ("us", "<fc=#8197bf>US</fc>")
-                              , ("ru", "<fc=#902020>RU</fc>")
+                    , Run Kbd [ ("us", "<fc=#8fbfdc>US</fc>")
+                              , ("ru", "<fc=#cf6a4c>RU</fc>")
                               ]
-                    , Run Date "%a%d <fc=#8197bf>%H:%M</fc>" "date" 300
+                    , Run Date "%a%d <fc=#8fbfdc>%H:%M</fc>" "date" 300
                     ]
        , sepChar = "%"
        , alignSep = "}{"
