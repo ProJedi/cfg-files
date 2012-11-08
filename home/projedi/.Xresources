@@ -11,10 +11,11 @@ URxvt.boldFont:
 URxvt.boldItalicFont:
 URxvt.perl-ext-common: default,clipboard,vtwheel
 URxvt.modifier: mod4
-URxvt.scrollTtyOutput: true
-Urxvt.scrollWithBuffer: true
-Urxvt.scrollTtyKeypress: true
-Urxvt.saveLines: 5000
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: false
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 5000
+URxvt.scrollBar: false
 
 URxvt.background:            #151515
 URxvt.foreground:            #888888
