@@ -16,6 +16,8 @@ endif
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufRead,BufNewFile *.pro set filetype=qmake
+set omnifunc=syntaxcomplete#Complete
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 let &viminfo='/home/projedi/.cache/.viminfo'
 

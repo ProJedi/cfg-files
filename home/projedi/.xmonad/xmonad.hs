@@ -38,7 +38,7 @@ myStartupHook = return ()
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 
-main = xmonad =<< statusBar "/usr/bin/xmobar" myPP toggleStrutsKey myConfig
+main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
 
 myPP = defaultPP { ppCurrent = wrap "[" "]"
                  , ppVisible = wrap "(" ")"
@@ -72,7 +72,7 @@ myLayout = smartBorders tiled ||| noBorders Full
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-myXPConfig = XPC { font = "xft:Anonymous Pro-8:antialias=false"
+myXPConfig = defaultXPConfig { font = "xft:Anonymous Pro-8:antialias=false"
                  , bgColor = "#151515"
                  , fgColor = "#888888"
                  , fgHLight = "#e8e8d3"
@@ -89,6 +89,7 @@ myXPConfig = XPC { font = "xft:Anonymous Pro-8:antialias=false"
                  , autoComplete = Nothing
                  , showCompletionOnTab = False
                  , searchPredicate = isInfixOf
+                 , alwaysHighlight = False
                  }
 
 myKeys conf = mkKeymap conf $

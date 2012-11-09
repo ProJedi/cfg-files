@@ -9,3 +9,5 @@
    s = status
    l = log --oneline --graph
    d = diff
+[push]
+	default = simple
