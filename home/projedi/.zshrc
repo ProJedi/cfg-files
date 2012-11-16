@@ -3,7 +3,7 @@ source /etc/zsh/zprofile
 ZSH=~projedi/.oh-my-zsh
 #TODO: Add return code
 ZSH_THEME="eastwood"
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 
