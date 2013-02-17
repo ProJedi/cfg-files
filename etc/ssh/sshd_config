@@ -90,34 +90,41 @@ ChallengeResponseAuthentication no
 UsePAM no
 
 #AllowAgentForwarding yes
-AllowTcpForwarding yes
+AllowTcpForwarding no
 #GatewayPorts no
-X11Forwarding yes
-X11DisplayOffset 10
-X11UseLocalhost yes
-#PrintMotd yes
+#X11Forwarding no
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+PrintMotd no # pam does that
 #PrintLastLog yes
-TCPKeepAlive yes
-UseLogin no
-#UsePrivilegeSeparation yes
+#TCPKeepAlive yes
+#UseLogin no
+UsePrivilegeSeparation sandbox		# Default for new installations.
 #PermitUserEnvironment no
 #Compression delayed
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
 #UseDNS yes
-#PidFile /var/run/sshd.pid
+#PidFile /run/sshd.pid
 #MaxStartups 10
 #PermitTunnel no
 #ChrootDirectory none
+#VersionAddendum none
 
 # no default banner path
 #Banner none
 
 # override default of no subsystems
-#Subsystem	sftp	/usr/lib/ssh/sftp-server
+Subsystem	sftp	/usr/lib/ssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
 #	X11Forwarding no
 #	AllowTcpForwarding no
 #	ForceCommand cvs server
+
+# SparkleShare
+# Please do not edit the above comment as it's used as a check by Dazzle
+Match User storage
+    PasswordAuthentication no
+    PubkeyAuthentication yes

@@ -6,8 +6,8 @@
 [alias]
    c = commit
    p = push
-   s = status
-   l = log --oneline --graph
+   s = status -sb
+   l = log --oneline --graph --decorate
    d = diff
 [push]
 	default = simple

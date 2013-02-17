@@ -1,5 +1,6 @@
-Config { font = "xft:Anonymous Pro-8:antialias=false"
-       , bgColor = "#151515"
+Config { 
+--font = "xft:Anonymous Pro-8:antialias=false"
+        bgColor = "#151515"
        , fgColor = "#888888"
        , border = NoBorder
        , position = Bottom
@@ -11,13 +12,13 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
                                   , "--", "-f", "ADP1/online"
                                   , "-O", "AC"
                                   , "-o", "<fc=#cf6a4c>BAT</fc>"
-                                  ] 300
+                                  ] 100
                     , Run Com "mpc" [ "current" ] "mpd" 200
                     , Run Com "volume" [] "volume" 300
                     , Run Kbd [ ("us", "<fc=#8fbfdc>US</fc>")
                               , ("ru", "<fc=#cf6a4c>RU</fc>")
                               ]
-                    , Run Date "%a%d <fc=#8fbfdc>%H:%M</fc>" "date" 300
+                    , Run Date "%a%d <fc=#8fbfdc>%H:%M</fc>" "date" 100
                     ]
        , sepChar = "%"
        , alignSep = "}{"

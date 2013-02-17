@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.EZConfig
 import XMonad.Actions.NoBorders
 import XMonad.Util.Scratchpad
@@ -29,7 +30,7 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     ]
 
-myEventHook = mempty
+myEventHook = fullscreenEventHook
 
 myLogHook = return ()
 
@@ -49,7 +50,7 @@ myConfig = defaultConfig {
         focusFollowsMouse  = True,
         borderWidth        = 1,
         modMask            = mod4Mask,
-        workspaces         = ["1","2","3","4","5","6","7","8","9"],
+        workspaces         = ["1","2","3","4","5","6","7","8","9", "0"],
         normalBorderColor  = "#404040",
         focusedBorderColor = "#888888",
         keys               = myKeys,
@@ -120,7 +121,7 @@ myKeys conf = mkKeymap conf $
    , ("M-q", spawn "xmonad --recompile; xmonad --restart")
    , ("<F12>", scratchpadSpawnActionTerminal "urxvtc")
    ] ++ [ ("M-" ++ m ++ k, windows $ f i)
-        | (i, k) <- zip (workspaces conf) (map show [1..9])
+        | (i, k) <- zip (workspaces conf) (map show ([1..9] ++ [0]))
         , (f, m) <- [(W.greedyView, ""), (W.shift, "S-")]
    ] ++ [ ("M-" ++ m ++ k, screenWorkspace sc >>= flip whenJust (windows . f))
         | (k, sc) <- zip ["w", "e", "r"] [0..]

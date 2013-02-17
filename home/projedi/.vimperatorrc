@@ -64,3 +64,5 @@ map Т N
 map Ь M
 map Б <
 map Ю >
+noremap <C-j> <C-p>
+noremap <C-k> <C-n>

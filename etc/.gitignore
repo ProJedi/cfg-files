@@ -114,3 +114,12 @@ udevil/
 rsyncd.conf
 pango/
 iptables/
+R/
+chrony.drift
+drirc
+at-spi2/
+geoip/
+healthd.conf
+mono/
+ntop/
+sensors3.conf
