@@ -74,3 +74,5 @@ let g:clang_use_library = 1
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+
+let g:fuf_dataDir = '~/.cache/vim-fuf-data'
