@@ -15,7 +15,6 @@ crypttab
 wpa_supplicant/
 xinetd.d/
 xdg/
-udev/
 trusted-key.key
 vimrc
 texmf/
@@ -109,7 +108,6 @@ network.d/
 dkms/
 vdpau_wrapper.cfg
 vbox/
-udevil/
 rsyncd.conf
 pango/
 iptables/
