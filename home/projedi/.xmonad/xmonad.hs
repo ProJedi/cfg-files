@@ -12,6 +12,7 @@ import XMonad.Prompt.AppLauncher as AL
 import XMonad.Prompt.Shell
 import Data.List
 import XMonad.Layout.NoBorders
+import XMonad.Hooks.SetWMName
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -34,7 +35,7 @@ myEventHook = fullscreenEventHook
 
 myLogHook = return ()
 
-myStartupHook = return ()
+myStartupHook = setWMName "LG3D"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
