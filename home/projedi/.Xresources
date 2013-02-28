@@ -6,7 +6,7 @@ Xft.antialias: 0
 Xft.rgba: rgb
 
 URxvt.depth: 32
-URxvt.font: xft: Anonymous Pro-9:antialias=false
+URxvt.font: xft: Anonymous Pro-10:antialias=false
 URxvt.boldFont:
 URxvt.boldItalicFont:
 URxvt.perl-ext-common: default,clipboard,vtwheel

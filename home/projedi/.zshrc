@@ -16,7 +16,7 @@ eval `dircolors ~projedi/.dircolors`
 
 export LANG="en_US.utf8"
 export BROWSER=chromium
-export EDITOR="vim"
+export EDITOR="/usr/bin/vim"
 PATH=~projedi/.bin:$PATH
 PATH=~projedi/.cabal/bin:$PATH
 export PATH
