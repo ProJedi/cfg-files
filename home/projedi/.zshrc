@@ -42,3 +42,31 @@ alias open='xdg-open'
 alias mpc="mpc -f '[[%artist% - ][%album% - ]%title%]'"
 # Show progress while file copying
 alias cpv='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
+
+[[ $NOTIFY_COMMAND_COMPLETE_TIMEOUT == "" ]] && NOTIFY_COMMAND_COMPLETE_TIMEOUT=3
+
+# Notify about the last command's success or failure.
+function notify-command-complete() {
+  last_status=$?
+  if [[ -n $start_time ]]; then
+     now=`date "+%s"`
+     ((diff = $now - $start_time ))
+     if (( $diff > $NOTIFY_COMMAND_COMPLETE_TIMEOUT )); then
+        if [[ $last_status -gt "0" ]]; then
+           notify-send "Job $last_command_name failed" "Exit code: $last_status"
+        else
+           notify-send "Job $last_command_name finished successfully"
+        fi
+     fi
+  fi
+  unset last_command start_time last_status
+}
+
+function store-command-stats() {
+  last_command=$1
+  last_command_name=${1[(wr)^(*=*|sudo|ssh|-*)]}
+  start_time=`date "+%s"`
+}
+
+add-zsh-hook preexec store-command-stats
+add-zsh-hook precmd notify-command-complete
