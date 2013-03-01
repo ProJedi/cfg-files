@@ -9,13 +9,20 @@ URxvt.depth: 32
 URxvt.font: xft: Anonymous Pro-10:antialias=false
 URxvt.boldFont:
 URxvt.boldItalicFont:
-URxvt.perl-ext-common: default,clipboard,vtwheel
+URxvt.perl-ext-common: default,clipboard,vtwheel,url-select,keyboard-select
 URxvt.modifier: mod4
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: false
 URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 5000
+URxvt.keysym.M-C:   perl:clipboard:copy
+URxvt.keysym.M-V:   perl:clipboard:paste
 URxvt.scrollBar: false
+URxvt.keysym.C-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox -new-tab
+URxvt.url-select.underline: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.background:            #151515
 URxvt.foreground:            #888888
