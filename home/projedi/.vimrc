@@ -67,12 +67,7 @@ let g:tex_flavor = "latex"
 
 let g:yankring_history_file = '.cache/yankring_history'
 
-let g:clang_hl_errors = 0
-let g:clang_complete_auto = 0
-let g:clang_user_options = '-std=c++11'
-let g:clang_use_library = 1
-
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-
 let g:fuf_dataDir = '~/.cache/vim-fuf-data'
+
+let g:LatexBox_Folding = 1
+let g:LatexBox_fold_envs = 1

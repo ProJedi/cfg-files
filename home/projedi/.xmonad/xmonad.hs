@@ -96,7 +96,6 @@ myXPConfig = defaultXPConfig { font = "xft:Anonymous Pro-8:antialias=false"
 
 myKeys conf = mkKeymap conf $
    [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
-   , ("M-u", AL.launchApp myXPConfig "evince")
    , ("M-<D>", spawn "mpc toggle")
    , ("M-S-<L>", spawn "mpc prev")
    , ("M-S-<R>", spawn "mpc next")

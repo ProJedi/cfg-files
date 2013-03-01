@@ -1,0 +1,9 @@
+[Unit]
+Description=urxvtd
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/urxvtd -o
+
+[Install]
+WantedBy=wm.target

@@ -18,7 +18,7 @@ URxvt.saveLines: 5000
 URxvt.keysym.M-C:   perl:clipboard:copy
 URxvt.keysym.M-V:   perl:clipboard:paste
 URxvt.scrollBar: false
-URxvt.keysym.C-u: perl:url-select:select_next
+URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/firefox -new-tab
 URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
