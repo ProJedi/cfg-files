@@ -50,7 +50,9 @@ alias cdhmw='cd ~/Repos/Homework/Spring2013'
 # Notify about the last command's success or failure.
 function notify-command-complete() {
   last_status=$?
-  if [[ -n $start_time ]]; then
+  if [[ $last_command_name == "vim" || $last_command_name == "man" || $last_command_name == "less" ]]; then
+     true
+  elif [[ -n $start_time ]]; then
      now=`date "+%s"`
      ((diff = $now - $start_time ))
      if (( $diff > $NOTIFY_COMMAND_COMPLETE_TIMEOUT )); then
