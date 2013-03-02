@@ -29,8 +29,9 @@ case "$1" in
       #path=/sys/class/backlight/samsung
       cur=`cat $path/brightness`
       max=`cat $path/max_brightness`
-      if [[ $cur -lt $max ]]; then
-         cur=$((cur + 1))
+      cur=$((cur + 5))
+      if [[ $cur -gt $max ]]; then
+         cur=$max
       fi
       echo $cur > $path/brightness
       ;;
@@ -38,8 +39,9 @@ case "$1" in
       path=/sys/class/backlight/nv_backlight
       #path=/sys/class/backlight/samsung
       cur=`cat $path/brightness`
-      if [[ $cur -gt 0 ]]; then
-         cur=$((cur - 1))
+      cur=$((cur - 5))
+      if [[ $cur -lt 0 ]]; then
+         cur=0
       fi
       echo $cur > $path/brightness
       ;;
