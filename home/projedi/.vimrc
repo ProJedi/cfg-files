@@ -1,5 +1,36 @@
 set nocompatible
-call pathogen#infect("/home/projedi/.vimbundle")
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+let g:vundle_default_git_proto = 'git'
+
+Bundle 'gmarik/vundle'
+
+Bundle 'FuzzyFinder'
+Bundle 'L9'
+Bundle 'YankRing.vim'
+Bundle 'javacomplete'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'spolu/dwm.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'bitc/lushtags'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'artoj/qmake-syntax-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-fugitive'
+Bundle 'dag/vim2hs'
+
+"call pathogen#infect("/home/projedi/.vimbundle")
+
+filetype plugin indent on
 
 if has('gui_running')
    set guioptions="a"
@@ -9,7 +40,6 @@ if has('gui_running')
 endif
 
 syntax on
-filetype plugin indent on
 colorscheme jellybeans
 
 set encoding=utf-8
