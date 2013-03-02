@@ -43,7 +43,9 @@ alias mpc="mpc -f '[[%artist% - ][%album% - ]%title%]'"
 # Show progress while file copying
 alias cpv='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 
-[[ $NOTIFY_COMMAND_COMPLETE_TIMEOUT == "" ]] && NOTIFY_COMMAND_COMPLETE_TIMEOUT=3
+alias cdhmw='cd ~/Repos/Homework/Spring2013'
+
+[[ $NOTIFY_COMMAND_COMPLETE_TIMEOUT == "" ]] && NOTIFY_COMMAND_COMPLETE_TIMEOUT=30
 
 # Notify about the last command's success or failure.
 function notify-command-complete() {
