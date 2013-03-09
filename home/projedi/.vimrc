@@ -28,8 +28,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'dag/vim2hs'
 
-"call pathogen#infect("/home/projedi/.vimbundle")
-
 filetype plugin indent on
 
 if has('gui_running')
@@ -72,6 +70,8 @@ nnoremap <C-P> :FufBuffer<CR>
 
 " Higlight everything after 80 column with ErrorMsg style
 au BufEnter * match ErrorMsg '\%>80v.\+'
+" Highlight trailing whitespace
+au BufEnter * match ErrorMsg /\s\+$/
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufEnter *.pro setlocal filetype=qmake
