@@ -35,13 +35,14 @@ alias pls='sudo'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias mnt='udisksctl mount'
-alias umnt='udisksctl umount'
+alias umnt='udisksctl unmount'
 alias l='ls -lah'
 alias torr='transmission-remote'
 alias open='xdg-open'
 alias mpc="mpc -f '[[%artist% - ][%album% - ]%title%]'"
 # Show progress while file copying
 alias cpv='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
+alias cprv='rsync -r -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 
 alias cdhmw='cd ~/Repos/Homework/Spring2013'
 
