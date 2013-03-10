@@ -48,6 +48,15 @@ alias cdhmw='cd ~/Repos/Homework/Spring2013'
 
 [[ $NOTIFY_COMMAND_COMPLETE_TIMEOUT == "" ]] && NOTIFY_COMMAND_COMPLETE_TIMEOUT=30
 
+# TODO: make it also autocomplete.
+function hoogle() {
+   if [[ $1 == "data" || $1 == "--help" || $1 == "-?" ]]; then
+      /home/projedi/.cabal/bin/hoogle $1
+   else
+      /home/projedi/.cabal/bin/hoogle $1 | head -n 10
+   fi
+}
+
 # Notify about the last command's success or failure.
 function notify-command-complete() {
   last_status=$?
