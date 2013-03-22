@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~projedi/.vim/bundle/vundle
 call vundle#rc()
 
 let g:vundle_default_git_proto = 'git'
@@ -101,3 +101,5 @@ let g:fuf_dataDir = '~/.cache/vim-fuf-data'
 
 let g:LatexBox_Folding = 1
 let g:LatexBox_fold_envs = 1
+
+let NERD_haskell_alt_style=0
