@@ -35,7 +35,11 @@ myEventHook = fullscreenEventHook
 
 myLogHook = return ()
 
-myStartupHook = setWMName "LG3D"
+myStartupHook = do
+      spawn "xrdb -merge ~/.Xresources"
+      spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
+      spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
+      setWMName "LG3D"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )

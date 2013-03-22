@@ -4,6 +4,7 @@ After=xorg.target
 
 [Service]
 Environment=PATH=%h/.bin:%h/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=DISPLAY=:0
 ExecStart=/home/projedi/.cabal/bin/xmonad
 Restart=always
 RestartSec=10
