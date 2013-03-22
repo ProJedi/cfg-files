@@ -1,0 +1,9 @@
+[Unit]
+Description=udisks-glue - notify about mounts
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/udisks-glue --config /etc/udisks-glue.conf --foreground
+
+[Install]
+WantedBy=wm.target
