@@ -1,8 +1,0 @@
-[Unit]
-Description=Fcron
-
-[Service]
-ExecStart=/usr/sbin/fcron -f
-
-[Install]
-WantedBy=multi-user.target
