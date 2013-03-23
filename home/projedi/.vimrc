@@ -27,6 +27,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'dag/vim2hs'
+" This one needs some tweaking
+Bundle 'hlissner/vim-multiedit'
 
 filetype plugin indent on
 
@@ -68,10 +70,8 @@ let g:yankring_replace_n_pkey = ''
 let g:yankring_replace_n_nkey = ''
 nnoremap <C-P> :FufBuffer<CR>
 
-" Higlight everything after 80 column with ErrorMsg style
-au BufEnter * match ErrorMsg '\%>80v.\+'
-" Highlight trailing whitespace
-au BufEnter * match ErrorMsg /\s\+$/
+call matchadd('ErrorMsg', '\s\+$')
+call matchadd('ErrorMsg', '\%>80v.\+')
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufEnter *.pro setlocal filetype=qmake
