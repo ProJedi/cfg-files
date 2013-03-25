@@ -115,3 +115,6 @@ Documents/
 .vimbundle-old
 .task/
 .blobby/
+.IdeaIC12
+.dropbox-dist/
+hmw

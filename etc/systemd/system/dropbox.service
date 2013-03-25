@@ -1,9 +1,0 @@
-[Unit]
-Description=Dropbox daemon
-
-[Service]
-User=projedi
-ExecStart=/usr/bin/dropboxd
-
-[Install]
-WantedBy=multi-user.target

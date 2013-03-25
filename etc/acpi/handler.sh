@@ -25,21 +25,21 @@ case "$1" in
       esac
       ;;
    video/brightnessup)
-      path=/sys/class/backlight/nv_backlight
-      #path=/sys/class/backlight/samsung
+      #path=/sys/class/backlight/nv_backlight
+      path=/sys/class/backlight/samsung
       cur=`cat $path/brightness`
       max=`cat $path/max_brightness`
-      cur=$((cur + 5))
+      cur=$((cur + 1))
       if [[ $cur -gt $max ]]; then
          cur=$max
       fi
       echo $cur > $path/brightness
       ;;
    video/brightnessdown)
-      path=/sys/class/backlight/nv_backlight
-      #path=/sys/class/backlight/samsung
+      #path=/sys/class/backlight/nv_backlight
+      path=/sys/class/backlight/samsung
       cur=`cat $path/brightness`
-      cur=$((cur - 5))
+      cur=$((cur - 1))
       if [[ $cur -lt 0 ]]; then
          cur=0
       fi

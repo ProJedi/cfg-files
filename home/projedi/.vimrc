@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 Bundle 'FuzzyFinder'
 Bundle 'L9'
 Bundle 'YankRing.vim'
-Bundle 'javacomplete'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'spolu/dwm.vim'
@@ -54,9 +53,24 @@ set shiftwidth=3
 set expandtab
 set foldmethod=syntax
 set laststatus=2
-set statusline=\[%{fugitive#head(7)}\]\ %<%f\ %h%m%r%=%L
+set statusline=\[%{fugitive#head(7)}\]\ %<%f\ %h%m%r%=%L,%c
 set lazyredraw
 set completeopt=menu,menuone,longest
+
+if has("cscope")
+   set csto=0
+   set cst
+   set nocsverb
+   " add any database in current directory
+   if filereadable("cscope.out")
+       cs add cscope.out
+   " else add database pointed to by environment
+   elseif $CSCOPE_DB != ""
+       cs add $CSCOPE_DB
+   endif
+   set csverb
+   set cscopetag
+endif
 
 nnoremap <F8> :noh<CR>
 nnoremap <silent> <F3> :YRShow<CR>
@@ -69,6 +83,7 @@ inoremap \fn <C-R>=expand("%:t:r")<CR>
 let g:yankring_replace_n_pkey = ''
 let g:yankring_replace_n_nkey = ''
 nnoremap <C-P> :FufBuffer<CR>
+imap jj <Esc>
 
 call matchadd('ErrorMsg', '\s\+$')
 call matchadd('ErrorMsg', '\%>80v.\+')
@@ -76,8 +91,6 @@ call matchadd('ErrorMsg', '\%>80v.\+')
 au BufEnter *.hsc setlocal filetype=haskell
 au BufEnter *.pro setlocal filetype=qmake
 
-au FileType java set omnifunc=javacomplete#Complete
-au FileType java set completefunc=javacomplete#CompleteParamsInfo
 au FileType haskell set omnifunc=necoghc#omnifunc
 
 au FileType tex set indentexpr=
@@ -103,3 +116,5 @@ let g:LatexBox_Folding = 1
 let g:LatexBox_fold_envs = 1
 
 let NERD_haskell_alt_style=0
+
+let g:ycm_global_ycm_extra_conf='~projedi/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'

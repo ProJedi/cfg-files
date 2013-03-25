@@ -120,3 +120,9 @@ healthd.conf
 mono/
 ntop/
 sensors3.conf
+audisp/
+audit/
+libaudit.conf
+slsh.rc
+resolvconf.conf
+netctl/

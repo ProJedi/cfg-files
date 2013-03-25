@@ -1,0 +1,3 @@
+.include /usr/lib/systemd/system/dropbox@.service
+[Service]
+ExecStartPre=/usr/bin/sleep 30
