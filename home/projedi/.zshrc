@@ -85,3 +85,5 @@ function store-command-stats() {
 
 add-zsh-hook preexec store-command-stats
 add-zsh-hook precmd notify-command-complete
+
+unalias sl
