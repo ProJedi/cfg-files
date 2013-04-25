@@ -126,3 +126,5 @@ libaudit.conf
 slsh.rc
 resolvconf.conf
 netctl/
+openmpi/
+speech-dispatcher/
