@@ -3,7 +3,7 @@ source /etc/zsh/zprofile
 ZSH=~projedi/.oh-my-zsh
 CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
-plugins=(git extract git-extras history-substring-search last-working-dir svn systemd)
+plugins=(git extract git-extras history-substring-search last-working-dir svn systemd zsh-vim-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -13,7 +13,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='$(git_prompt_info)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
-RPROMPT="%(?..[%{$fg_no_bold[red]%}%?%{$reset_color%}])"
+RPROMPT="%(?..[%{$fg_no_bold[red]%}%?%{$reset_color%}])$(vi_mode_prompt_info)"
 
 export JACK_START_SERVER=1
 

@@ -27,7 +27,9 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'dag/vim2hs'
 " This one needs some tweaking
-Bundle 'hlissner/vim-multiedit'
+"Bundle 'hlissner/vim-multiedit'
+Bundle 'szw/vim-smartclose.git'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 
@@ -43,7 +45,7 @@ colorscheme jellybeans
 
 set encoding=utf-8
 set wildignore+=*.so,*.class,*.hi,*.o
-set number
+set relativenumber
 set hlsearch
 set incsearch
 set backspace=indent,eol,start
@@ -82,11 +84,19 @@ cnoremap w!! w !sudo tee >/dev/null %
 inoremap \fn <C-R>=expand("%:t:r")<CR>
 let g:yankring_replace_n_pkey = ''
 let g:yankring_replace_n_nkey = ''
+" This is now used in multiple cursors plugin
 nnoremap <C-P> :FufBuffer<CR>
-imap jj <Esc>
+imap <C-k> <Esc>
+vnoremap / <Esc>`</\%V
+vnoremap ? <Esc>`>?\%V
 
 call matchadd('ErrorMsg', '\s\+$')
 call matchadd('ErrorMsg', '\%>80v.\+')
+
+au FocusLost * set number
+au FocusGained * set relativenumber
+au InsertEnter * set number
+au InsertLeave * set relativenumber
 
 au BufEnter *.hsc setlocal filetype=haskell
 au BufEnter *.pro setlocal filetype=qmake
@@ -118,3 +128,11 @@ let g:LatexBox_fold_envs = 1
 let NERD_haskell_alt_style=0
 
 let g:ycm_global_ycm_extra_conf='~projedi/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+let g:smartclose_default_mapping_key = '<F7>'
+
+"let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_next_key = '<A-n>'
+let g:multi_cursor_prev_key = '<A-p>'
+let g:multi_cursor_skip_key = '<C-x>'
+let g:multi_cursor_quit_key = '<C-k>'
