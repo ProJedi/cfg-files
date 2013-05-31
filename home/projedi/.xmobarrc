@@ -1,6 +1,5 @@
-Config { 
---font = "xft:Anonymous Pro-8:antialias=false"
-        bgColor = "#151515"
+Config { font = "xft:Anonymous Pro-8:antialias=false"
+       , bgColor = "#151515"
        , fgColor = "#888888"
        , border = NoBorder
        , position = Bottom

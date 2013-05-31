@@ -39,6 +39,8 @@ myStartupHook = do
       spawn "xrdb -merge ~/.Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
+      spawn "xcompmgr &"
+      spawn "~/.fehbg"
       setWMName "LG3D"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
