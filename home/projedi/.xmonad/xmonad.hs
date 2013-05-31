@@ -37,7 +37,7 @@ myLogHook = return ()
 
 myStartupHook = do
       spawn "xcompmgr &"
-      spawn "xrdb -merge ~/.Xresources"
+      spawn "xrdb -merge ~/.config/Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
       spawn "zsh ~/.fehbg"
