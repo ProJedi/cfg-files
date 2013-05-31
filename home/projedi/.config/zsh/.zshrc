@@ -51,6 +51,7 @@ alias cpv='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 alias cprv='rsync -r -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 alias cdhmw='cd ~/Repos/Homework/Spring2013'
 alias tags='cscope -Rb'
+alias vim='vim -i ~/.cache/viminfo -u ~/.config/vim/vimrc'
 
 # TODO: make it also autocomplete.
 function hoogle() {

@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~projedi/.vim/bundle/vundle
+set rtp+=~projedi/.config/vim/plugins/vundle
 call vundle#rc()
 
 let g:vundle_default_git_proto = 'git'
@@ -116,7 +116,6 @@ au FileType java set shiftwidth=4
 "au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 "au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
-let &viminfo='/home/projedi/.cache/.viminfo'
 let mapleader = ';'
 let g:tex_flavor = "latex"
 
@@ -129,7 +128,7 @@ let g:LatexBox_fold_envs = 1
 
 let NERD_haskell_alt_style=0
 
-let g:ycm_global_ycm_extra_conf='~projedi/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~projedi/.config/vim/plugins/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 let g:smartclose_default_mapping_key = '<F7>'
 
