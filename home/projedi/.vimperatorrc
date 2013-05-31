@@ -66,3 +66,4 @@ map Б <
 map Ю >
 noremap <C-j> <C-p>
 noremap <C-k> <C-n>
+set defsearch="duckduckgo"

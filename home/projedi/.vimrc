@@ -87,6 +87,8 @@ let g:yankring_replace_n_nkey = ''
 " This is now used in multiple cursors plugin
 nnoremap <C-P> :FufBuffer<CR>
 imap <C-k> <Esc>
+vmap <C-k> <Esc>
+cmap <C-k> <Esc>
 vnoremap / <Esc>`</\%V
 vnoremap ? <Esc>`>?\%V
 
@@ -111,8 +113,8 @@ au FileType java set shiftwidth=4
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
 " screwing up folding when switching between windows.
-au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+"au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+"au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 let &viminfo='/home/projedi/.cache/.viminfo'
 let mapleader = ';'
