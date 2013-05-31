@@ -10,6 +10,7 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 export C_INCLUDE_PATH=/usr/lib/jvm/java-6-openjdk/include
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 export LESSHISTFILE=~projedi/.cache/lesshst
+export VIMPERATOR_INIT=':source ~projedi/.config/vimperator/vimperatorrc'
 #export PAGER=/usr/bin/less
 #export MANPAGER=$PAGER
 #export JACK_START_SERVER=1
