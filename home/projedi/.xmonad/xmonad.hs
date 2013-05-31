@@ -36,11 +36,12 @@ myEventHook = fullscreenEventHook
 myLogHook = return ()
 
 myStartupHook = do
+      spawn "xcompmgr &"
       spawn "xrdb -merge ~/.Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
-      spawn "xcompmgr &"
-      spawn "~/.fehbg"
+      spawn "zsh ~/.fehbg"
+      spawn "jack_control start"
       setWMName "LG3D"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
