@@ -12,7 +12,6 @@ Bundle 'FuzzyFinder'
 Bundle 'L9'
 Bundle 'YankRing.vim'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'spolu/dwm.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'nanotech/jellybeans.vim'
@@ -25,11 +24,13 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
-Bundle 'dag/vim2hs'
-" This one needs some tweaking
-"Bundle 'hlissner/vim-multiedit'
 Bundle 'szw/vim-smartclose.git'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+Bundle 'Rip-Rip/clang_complete'
+" Something is broken with it right now
+"Bundle 'honza/vim-snippets'
 
 filetype plugin indent on
 
@@ -58,6 +59,7 @@ set laststatus=2
 set statusline=\[%{fugitive#head(7)}\]\ %<%f\ %h%m%r%=%L,%c
 set lazyredraw
 set completeopt=menu,menuone,longest
+set pumheight=30
 
 if has("cscope")
    set csto=0
@@ -91,6 +93,14 @@ vmap <C-k> <Esc>
 cmap <C-k> <Esc>
 vnoremap / <Esc>`</\%V
 vnoremap ? <Esc>`>?\%V
+"imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+         \"\<Plug>(neosnippet_expand_or_jump)" :
+         \ pumvisible() ? neocomplcache#close_popup() : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+         \"\<Plug>(neosnippet_expand_or_jump)" :
+         \ pumvisible() ? neocomplcache#close_popup() : "\<TAB>"
 
 call matchadd('ErrorMsg', '\s\+$')
 call matchadd('ErrorMsg', '\%>80v.\+')
@@ -106,9 +116,6 @@ au BufEnter *.pro setlocal filetype=qmake
 au FileType haskell set omnifunc=necoghc#omnifunc
 
 au FileType tex set indentexpr=
-
-au FileType java set tabstop=4
-au FileType java set shiftwidth=4
 
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
@@ -128,8 +135,6 @@ let g:LatexBox_fold_envs = 1
 
 let NERD_haskell_alt_style=0
 
-let g:ycm_global_ycm_extra_conf='~projedi/.config/vim/plugins/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-
 let g:smartclose_default_mapping_key = '<F7>'
 
 "let g:multi_cursor_use_default_mapping = 0
@@ -137,3 +142,25 @@ let g:multi_cursor_next_key = '<A-n>'
 let g:multi_cursor_prev_key = '<A-p>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<C-k>'
+
+let g:necoghc_enable_detailed_browse = 1
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_temporary_dir = '/tmp/neocomplcache'
+let g:neocomplcache_enable_auto_select = 1
+
+" C/C++ autocompletion
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_force_omni_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.objc =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.objcpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0

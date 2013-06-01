@@ -2,7 +2,7 @@
 
 export LANG="en_US.utf8"
 export BROWSER=firefox
-export EDITOR="/usr/bin/vim -u ~projedi/.config/vim/vimrc -i ~/.cache/viminfo"
+export EDITOR="/usr/bin/vim -u ~/.config/vim/vimrc -i ~/.cache/viminfo"
 PATH=~projedi/.bin:$PATH
 PATH=~projedi/.cabal/bin:$PATH
 export PATH
@@ -10,7 +10,7 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 export C_INCLUDE_PATH=/usr/lib/jvm/java-6-openjdk/include
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 export LESSHISTFILE=~projedi/.cache/lesshst
-export VIMPERATOR_INIT=':source ~projedi/.config/vimperator/vimperatorrc'
+export VIMPERATOR_INIT=':source ~/.config/vimperator/vimperatorrc'
 export RXVT_SOCKET=/tmp/urxvtd-socket
 #export PAGER=/usr/bin/less
 #export MANPAGER=$PAGER

@@ -15,6 +15,7 @@ setopt noclobber
 setopt ignoreeof
 setopt autocd
 setopt correct
+setopt INC_APPEND_HISTORY
 
 PROMPT="%{$fg[cyan]%}[%~% ]%{$reset_color%}$ "
 RPROMPT="%(?..[%{$fg_no_bold[red]%}%?%{$reset_color%}])"
@@ -107,7 +108,7 @@ function save-last-working-dir() {
 	pwd >| "$cache_file"
 }
 
-[[ -r "$cache_file" ]] && cd `cat "$cache_file"`
+[[ -r "$cache_file" ]] && cd "`cat $cache_file`"
 
 ###### Setting up hooks #######
 
