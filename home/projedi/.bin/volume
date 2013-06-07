@@ -1,0 +1,3 @@
+#!/bin/sh
+
+amixer get Master | sed -n '$ p' | grep -o '[0-9]*%'
