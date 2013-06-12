@@ -4,7 +4,7 @@ After=sound.target
 
 [Service]
 User=projedi
-ExecStart=/usr/bin/mpd --no-daemon
+ExecStart=/usr/bin/mpd --no-daemon /home/projedi/.config/mpd.conf
 
 [Install]
 WantedBy=multi-user.target

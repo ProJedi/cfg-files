@@ -27,6 +27,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 myManageHook = composeAll
     [ title =? "VideochatMainWindow" --> doFloat
+    , title =? "Trace Analyzer" --> doFloat
+    , title =? "glade-previewer" --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     ]
@@ -40,7 +42,7 @@ myStartupHook = do
       spawn "xrdb -merge ~/.config/Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
-      spawn "zsh ~/.fehbg"
+      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot.png"
       spawn "jack_control start"
       setWMName "LG3D"
 
@@ -109,7 +111,7 @@ myKeys conf = mkKeymap conf $
    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")
    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
    , ("<Print>", spawn "scrot /tmp/shot-%Y-%m-%d.png")
-   , ("M-S-l", spawn "xscreensaver-command -lock")
+   , ("M-S-l", spawn "lock-screen.sh")
    --, ("M-p", spawn "dmenu_run -fn 'Anonymous Pro-8' -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'")
    , ("M-p", shellPrompt myXPConfig)
    , ("M-<F4>", kill)

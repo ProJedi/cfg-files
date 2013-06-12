@@ -54,7 +54,8 @@ alias cdhmw='cd ~/Repos/Homework/Spring2013'
 alias tags='cscope -Rb'
 alias vim='vim -i ~projedi/.cache/viminfo -u ~projedi/.config/vim/vimrc'
 alias gvim='gvim -i ~projedi/.cache/viminfo -u ~projedi/.config/vim/vimrc'
-alias xsel='xsel -l .cache/xsel.log'
+alias xsel='xsel -l ~/.cache/xsel.log'
+alias gdb='gdb -x .config/gdbinit'
 
 # TODO: make it also autocomplete.
 function hoogle() {

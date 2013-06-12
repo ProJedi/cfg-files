@@ -1,4 +1,3 @@
-set rtp=~projedi/.config/vimperator/data
 map ё `
 map й q
 map ц w

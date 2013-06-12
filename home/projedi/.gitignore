@@ -72,7 +72,6 @@ GDrive/
 .jgtasks-cache/
 .jgtasks-credentials
 .ArobasMusic/
-.bin/
 .cloudprintauth
 .Skype
 .nv/
@@ -130,3 +129,7 @@ steam
 .fehbg
 LectureNotes/
 ksp-screenshot.png
+wine
+.gradle/
+.darwinia
+.Prison Architect/

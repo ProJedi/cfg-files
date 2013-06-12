@@ -4,7 +4,7 @@ Requires=mpd.service
 
 [Service]
 User=projedi
-ExecStart=/usr/bin/mpdscribble -D
+ExecStart=/usr/bin/mpdscribble --no-daemon --conf /home/projedi/.config/mpdscribble.conf
 
 [Install]
 WantedBy=multi-user.target

@@ -11,11 +11,18 @@ export C_INCLUDE_PATH=/usr/lib/jvm/java-6-openjdk/include
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 export LESSHISTFILE=~projedi/.cache/lesshst
 export VIMPERATOR_INIT=':source ~/.config/vimperator/vimperatorrc'
+export VIMPERATOR_RUNTIME='~/.config/vimperator/data'
 export RXVT_SOCKET=/tmp/urxvtd-socket
+export IDEA_PROPERTIES=~/.config/idea.properties
+export STUDIO_PROPERTIES=~/.config/android-studio.properties
+export TEXMFVAR=~/.local/share/texmf-var
+export ANDROID_SDK_HOME=~/.local/share/android-sdk
+export TASKRC=~/.config/task/taskrc
+export WINEPREFIX=/usr/local/games/Wine
 #export PAGER=/usr/bin/less
 #export MANPAGER=$PAGER
 #export JACK_START_SERVER=1
 
 eval `dircolors ~projedi/.config/dircolors`
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /usr/lib/systemd/systemd --user
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec /usr/lib/systemd/systemd --user

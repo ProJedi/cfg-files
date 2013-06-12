@@ -29,6 +29,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'haskell/haskell-mode-vim'
 " Something is broken with it right now
 "Bundle 'honza/vim-snippets'
 
@@ -164,3 +165,9 @@ let g:neocomplcache_force_omni_patterns.objcpp =
       \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
+
+let hs_highlight_types = 1
+let hs_highlight_more_types = 1
+let hs_highlight_classes = 1
+let hs_highlight_functions = 1
+let hs_highlight_prelude = 1

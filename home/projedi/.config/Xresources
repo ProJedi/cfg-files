@@ -24,6 +24,7 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
+URxvt.dynamicColors: on
 URxvt.background:            #151515
 URxvt.foreground:            #888888
 URxvt.cursorColor:           #888888
@@ -51,7 +52,7 @@ URxvt.color4:                #2b5b77
 URxvt.color12:               #7697d6
 
 !! magenta dark/light
-URxvt.color5:                #dd093
+URxvt.color5:                #dd0093
 URxvt.color13:               #f0a0c0
 
 !! cyan dark/light
