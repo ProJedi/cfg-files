@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+"filetype off
 
 set rtp+=~projedi/.config/vim/plugins/vundle
 call vundle#rc()
@@ -146,9 +146,11 @@ let g:multi_cursor_quit_key = '<C-k>'
 
 let g:necoghc_enable_detailed_browse = 1
 
+let NERDTreeIgnore=['.swp$', '.hi$', '.o$']
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_temporary_dir = '/tmp/neocomplcache'
-let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
 
 " C/C++ autocompletion
 if !exists('g:neocomplcache_force_omni_patterns')

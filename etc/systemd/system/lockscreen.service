@@ -1,0 +1,16 @@
+[Unit]
+Description=Lock screen
+Before=sleep.target
+
+[Service]
+User=projedi
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/mpc pause
+# This is buggy as hell
+#ExecStartPre=/usr/bin/scrot /tmp/lockscreen.png
+#ExecStartPre=/usr/bin/convert /tmp/lockscreen.png -scale 683x384 -blur 2x2 -scale 1366x768 -type Grayscale -brightness-contrast -10 /tmp/lockscreen-out.png
+#ExecStartPre=/usr/bin/i3lock -ni /tmp/lockscreen-out.png
+ExecStart=/usr/bin/sleep 0.1
+
+[Install]
+WantedBy=sleep.target

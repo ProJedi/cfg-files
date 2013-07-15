@@ -129,3 +129,5 @@ netctl/
 openmpi/
 speech-dispatcher/
 apache-ant/
+derby.conf
+xtables/

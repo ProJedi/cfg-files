@@ -18,7 +18,6 @@ export STUDIO_PROPERTIES=~/.config/android-studio.properties
 export TEXMFVAR=~/.local/share/texmf-var
 export ANDROID_SDK_HOME=~/.local/share/android-sdk
 export TASKRC=~/.config/task/taskrc
-export WINEPREFIX=/usr/local/games/Wine
 export GST_REGISTRY=~/.local/share/gstreamer-registry.xml
 export GIMP2_DIRECTORY=~/.config/gimp
 #export PAGER=/usr/bin/less
@@ -27,4 +26,4 @@ export GIMP2_DIRECTORY=~/.config/gimp
 
 eval `dircolors ~projedi/.config/dircolors`
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec /usr/lib/systemd/systemd --user
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /usr/lib/systemd/systemd --user

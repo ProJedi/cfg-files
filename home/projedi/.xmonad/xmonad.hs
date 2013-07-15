@@ -29,6 +29,8 @@ myManageHook = composeAll
     [ title =? "VideochatMainWindow" --> doFloat
     , title =? "Trace Analyzer" --> doFloat
     , title =? "glade-previewer" --> doFloat
+    , className =? "Tilda" --> doFloat
+    , className =? "Guake" --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     ]
@@ -38,13 +40,16 @@ myEventHook = fullscreenEventHook
 myLogHook = return ()
 
 myStartupHook = do
+      setWMName "LG3D"
       spawn "xcompmgr &"
       spawn "xrdb -merge ~/.config/Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
-      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot.png"
+      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1.png"
       spawn "jack_control start"
-      setWMName "LG3D"
+      spawn "pulseaudio --start"
+      -- spawn "guake" -- tilda has strange blank screen problem right now
+      spawn "tilda"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
@@ -128,7 +133,7 @@ myKeys conf = mkKeymap conf $
    --, ("M-g", withFocused toggleBorder)
    , ("M-S-q", io (exitWith ExitSuccess))
    , ("M-q", spawn "xmonad --recompile; xmonad --restart")
-   , ("<F12>", scratchpadSpawnActionTerminal "urxvtc")
+   --, ("<F12>", scratchpadSpawnActionTerminal "urxvtc")
    ] ++ [ ("M-" ++ m ++ k, windows $ f i)
         | (i, k) <- zip (workspaces conf) (map show ([1..9] ++ [0]))
         , (f, m) <- [(W.greedyView, ""), (W.shift, "S-")]

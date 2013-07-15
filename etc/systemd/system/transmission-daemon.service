@@ -1,10 +1,10 @@
 [Unit]
-Description=Transmission client
+Description=Transmission BitTorrent Daemon
 
 [Service]
 User=projedi
-ExecStart=/usr/bin/transmission-daemon -g /home/projedi/.config/transmission -f
-StandardOutput=syslog
+Type=notify
+ExecStart=/usr/bin/transmission-daemon -g /home/projedi/.config/transmission -f --log-error
 
 [Install]
 WantedBy=multi-user.target

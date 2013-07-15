@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pactl unload-module module-jackdbus-detect
+pactl load-module module-jackdbus-detect

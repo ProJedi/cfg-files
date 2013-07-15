@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+/usr/bin/skype --dbpath=.config/Skype/SkypeDB

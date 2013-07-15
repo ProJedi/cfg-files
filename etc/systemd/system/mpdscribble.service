@@ -1,6 +1,6 @@
 [Unit]
 Description=Scrobbler for MPD
-Requires=mpd.service
+After=mpd.service
 
 [Service]
 User=projedi
