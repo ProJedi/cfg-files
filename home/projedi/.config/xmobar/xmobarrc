@@ -3,6 +3,7 @@ Config { font = "xft:Anonymous Pro-8:antialias=false"
        , fgColor = "#888888"
        , border = NoBorder
        , position = Bottom
+       , hideOnStart = False
        , commands = [ Run StdinReader
                     , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "10", "-H", "95"
