@@ -45,7 +45,7 @@ myStartupHook = do
       spawn "xrdb -merge ~/.config/Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
-      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1.png"
+      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1-jellybeans.png"
       spawn "jack_control start"
       spawn "pulseaudio --start"
       -- spawn "guake" -- tilda has strange blank screen problem right now

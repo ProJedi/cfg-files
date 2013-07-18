@@ -32,6 +32,9 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'haskell/haskell-mode-vim'
 " Something is broken with it right now
 "Bundle 'honza/vim-snippets'
+Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
 
 filetype plugin indent on
 
@@ -61,6 +64,8 @@ set statusline=\[%{fugitive#head(7)}\]\ %<%f\ %h%m%r%=%L,%c
 set lazyredraw
 set completeopt=menu,menuone,longest
 set pumheight=30
+set list
+set listchars=tab:▸\ ,eol:¬
 
 if has("cscope")
    set csto=0
