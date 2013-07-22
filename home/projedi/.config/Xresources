@@ -24,46 +24,6 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-URxvt.dynamicColors: on
-URxvt.background:            #151515
-URxvt.foreground:            #888888
-URxvt.cursorColor:           #888888
-URxvt.pointerColorBackground:#151515
-URxvt.pointerColorForeground:#e8e8d3
-
-!! black dark/light
-URxvt.color0:                #151515
-URxvt.color8:                #404040
-
-!! red dark/light
-URxvt.color1:                #cf6a4c
-URxvt.color9:                #902020
-
-!! green dark/light
-URxvt.color2:               #437019
-URxvt.color10:                #70b950
-
-!! yellow dark/light
-URxvt.color3:               #ffb964
-URxvt.color11:                #dad085
-
-!! blue dark/light
-URxvt.color4:                #2b5b77
-URxvt.color12:               #7697d6
-
-!! magenta dark/light
-URxvt.color5:                #dd0093
-URxvt.color13:               #f0a0c0
-
-!! cyan dark/light
-URxvt.color6:                #c6b6ee
-URxvt.color14:               #8fbfdc
-
-!! white dark/light
-URxvt.color7:                #888888
-URxvt.color15:               #e8e8d3
-
-!man coloring
-URxvt.colorIT:      #e8e8d3
-URxvt.colorBD:      #8197bf
-URxvt.colorUL:      #8fbfdc
+*.colorIT: #fdf6e3
+*.colorBD: #eee8d5
+*.colorUL: #93a1a1

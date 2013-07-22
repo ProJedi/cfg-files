@@ -1,24 +1,24 @@
 Config { font = "xft:Anonymous Pro-8:antialias=false"
-       , bgColor = "#151515"
-       , fgColor = "#888888"
+       , bgColor = "#002b36"
+       , fgColor = "#839496"
        , border = NoBorder
        , position = Bottom
        , hideOnStart = False
        , commands = [ Run StdinReader
                     , Run Battery [ "-t", "<acstatus> <left>"
                                   , "-L", "10", "-H", "95"
-                                  , "-l", "#cf6a4c", "-h", "#70b950"
+                                  , "-l", "#dc322f", "-h", "#859900"
                                   , "-S", "True"
                                   , "--", "-f", "ADP1/online"
                                   , "-O", "AC"
-                                  , "-o", "<fc=#cf6a4c>BAT</fc>"
+                                  , "-o", "<fc=#dc322f>BAT</fc>"
                                   ] 100
                     , Run Com "mpc" [ "current" ] "mpd" 200
                     , Run Com "volume" [] "volume" 300
-                    , Run Kbd [ ("us", "<fc=#8fbfdc>US</fc>")
-                              , ("ru", "<fc=#cf6a4c>RU</fc>")
+                    , Run Kbd [ ("us", "<fc=#268bd2>US</fc>")
+                              , ("ru", "<fc=#dc322f>RU</fc>")
                               ]
-                    , Run Date "%a%d <fc=#8fbfdc>%H:%M</fc>" "date" 100
+                    , Run Date "%a%d <fc=#268bd2>%H:%M</fc>" "date" 100
                     ]
        , sepChar = "%"
        , alignSep = "}{"

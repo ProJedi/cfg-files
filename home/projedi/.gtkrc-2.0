@@ -1,24 +1,7 @@
 style "vimfix" {
-  bg[NORMAL] = "#151515" # this matches my gvim theme 'Normal' bg color.
+  # bg[NORMAL] = "#151515" # this matches my gvim theme 'Normal' bg color.
+  bg[NORMAL] = "#002b36" # this matches my gvim theme 'Normal' bg color.
 }
 widget "vim-main-window.*GtkForm" style "vimfix"
-
-style "chrome" {
-   ChromeGtkFrame::frame-color = "#151515"
-   #ChromeGtkFrame::inactive-frame-color = "#00ff00"
-   #ChromeGtkFrame::incognito-frame-color = "#404040"
-   #ChromeGtkFrame::incognito-inactive-frame-color = "#00ff00"
-
-   #ChromeGtkFrame::frame-gradient-size = 16
-   #ChromeGtkFrame::frame-gradient-color = "#0000ff"
-   #ChromeGtkFrame::inactive-frame-gradient-color = "#ff0000"
-   #ChromeGtkFrame::incognito-frame-gradient-color = "#5c5b56"
-   #ChromeGtkFrame::incognito-inactive-frame-gradient-color = "#5c5b56"
-
-   #ChromeGtkFrame::scrollbar-trough-color = "#151515"
-   #ChromeGtkFrame::scrollbar-slider-prelight-color = "#888888"
-   #ChromeGtkFrame::scrollbar-slider-normal-color = "#e8e8d3"
-}
-class "ChromeGtkFrame" style "chrome"
 
 gtk-font-name = "Anonymous Pro 9"

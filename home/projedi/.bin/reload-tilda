@@ -1,0 +1,22 @@
+#!/bin/sh
+
+function usage() {
+   echo "USAGE: reload-tilda dark|light"
+   exit 1
+}
+
+CFGDIR=~/.config/tilda
+
+if [[ $# -ne 1 ]]; then
+   usage
+fi
+
+if [[ $1 != 'dark' && $1 != 'light' ]]; then
+   usage
+fi
+
+killall tilda
+rm $CFGDIR/config_0
+ln -s $CFGDIR/config_$1 $CFGDIR/config_0
+notify-send 'Started tilda'
+tilda

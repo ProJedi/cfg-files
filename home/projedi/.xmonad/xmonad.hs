@@ -10,6 +10,7 @@ import System.Exit
 import XMonad.Prompt
 import XMonad.Prompt.AppLauncher as AL
 import XMonad.Prompt.Shell
+import XMonad.Prompt.XMonad
 import Data.List
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.SetWMName
@@ -42,14 +43,14 @@ myLogHook = return ()
 myStartupHook = do
       setWMName "LG3D"
       spawn "xcompmgr &"
+      spawn "xrdb -merge ~/.config/xresources/solarized"
       spawn "xrdb -merge ~/.config/Xresources"
       spawn "xsetroot -cursor_name left_ptr -solid '#151515'"
       spawn "setxkbmap 'us, ru' -option grp:caps_toggle"
-      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1-jellybeans.png"
+      spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1-solarized.png"
       spawn "jack_control start"
       spawn "pulseaudio --start"
-      -- spawn "guake" -- tilda has strange blank screen problem right now
-      spawn "tilda"
+      spawn "reload-tilda dark"
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
@@ -66,8 +67,8 @@ myConfig = defaultConfig {
         borderWidth        = 1,
         modMask            = mod4Mask,
         workspaces         = ["1","2","3","4","5","6","7","8","9", "0"],
-        normalBorderColor  = "#404040",
-        focusedBorderColor = "#888888",
+        normalBorderColor  = "#002b36",
+        focusedBorderColor = "#073642",
         keys               = myKeys,
         mouseBindings      = myMouseBindings,
         layoutHook         = myLayout,
@@ -89,11 +90,11 @@ myLayout = smartBorders tiled ||| noBorders Full
      delta   = 3/100
 
 myXPConfig = defaultXPConfig { font = "xft:Anonymous Pro-8:antialias=false"
-                 , bgColor = "#151515"
-                 , fgColor = "#888888"
-                 , fgHLight = "#e8e8d3"
-                 , bgHLight = "#404040"
-                 , borderColor = "#151515"
+                 , bgColor = "#002b36"
+                 , fgColor = "#839496"
+                 , bgHLight = "#073642"
+                 , fgHLight = "#93a1a1"
+                 , borderColor = "#002b36"
                  , promptBorderWidth = 0
                  , promptKeymap = defaultXPKeymap
                  , completionKey = xK_Tab
@@ -108,6 +109,20 @@ myXPConfig = defaultXPConfig { font = "xft:Anonymous Pro-8:antialias=false"
                  , alwaysHighlight = False
                  }
 
+launchDarkTheme = do
+   spawn "reload-tilda dark"
+   spawn "reload-term dark"
+   spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1-solarized-dark.png"
+
+launchLightTheme = do
+   spawn "reload-tilda light"
+   spawn "reload-term light"
+   spawn "feh --no-fehbg --bg-scale ~/.local/share/ksp-screenshot-1-solarized-light.png"
+
+commands = [ ("dark-theme", launchDarkTheme)
+           , ("light-theme", launchLightTheme)
+           ]
+
 myKeys conf = mkKeymap conf $
    [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
    , ("M-<D>", spawn "mpc toggle")
@@ -119,6 +134,7 @@ myKeys conf = mkKeymap conf $
    , ("M-S-l", spawn "lock-screen.sh")
    --, ("M-p", spawn "dmenu_run -fn 'Anonymous Pro-8' -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'")
    , ("M-p", shellPrompt myXPConfig)
+   , ("M-S-u", xmonadPromptC commands myXPConfig)
    , ("M-<F4>", kill)
    , ("M-<Space>", sendMessage NextLayout)
    , ("M-r", refresh)
