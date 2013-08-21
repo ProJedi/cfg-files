@@ -56,7 +56,9 @@ alias vim='vim -i ~projedi/.cache/viminfo -u ~projedi/.config/vim/vimrc'
 alias gvim='gvim -i ~projedi/.cache/viminfo -u ~projedi/.config/vim/vimrc'
 alias xsel='xsel -l ~/.cache/xsel.log'
 alias gdb='gdb -x .config/gdbinit'
+# vim here is alias
 alias vimdiff='vim -d'
+alias gg='git grep'
 
 # TODO: make it also autocomplete.
 function hoogle() {
