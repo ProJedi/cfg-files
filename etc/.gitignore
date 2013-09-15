@@ -131,3 +131,5 @@ speech-dispatcher/
 apache-ant/
 derby.conf
 xtables/
+dhcpcd.duid
+irssi.conf

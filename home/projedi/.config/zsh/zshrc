@@ -10,7 +10,9 @@ compinit -d ${TMPPREFIX}_compdump
 promptinit
 
 zstyle ':completion:*' menu select
-setopt completealiases
+# nocompletealiases means treating aliases as, well, aliases
+# while completealiases means treating them as new commands with their own completions
+setopt nocompletealiases
 setopt noclobber
 setopt ignoreeof
 setopt autocd
@@ -59,6 +61,7 @@ alias gdb='gdb -x .config/gdbinit'
 # vim here is alias
 alias vimdiff='vim -d'
 alias gg='git grep'
+alias bd='. bd -s'
 
 # TODO: make it also autocomplete.
 function hoogle() {

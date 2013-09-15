@@ -23,6 +23,8 @@ export GIMP2_DIRECTORY=~/.config/gimp
 #export PAGER=/usr/bin/less
 #export MANPAGER=$PAGER
 #export JACK_START_SERVER=1
+export GPODDER_HOME=~/.config/gpodder
+export GPODDER_DOWNLOAD_DIR=~/.cache/gpodder
 
 eval `dircolors ~projedi/.config/dircolors`
 

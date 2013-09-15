@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily timer
+
+[Timer]
+OnBootSec=5m
+OnUnitActiveSec=1d
+Unit=timer-daily.target
+
+[Install]
+WantedBy=wm.target

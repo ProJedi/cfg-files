@@ -1,0 +1,13 @@
+[Unit]
+Description=Refresh podcasts
+
+[Service]
+Type=oneshot
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/usr/bin/gpo update
+ExecStart=/usr/bin/gpo download
+
+[Install]
+WantedBy=timer-daily.target
