@@ -1,6 +1,7 @@
 [Unit]
-Description=Xinitrc Stuff
-Wants=wm.target
+Description=Empty target
+After=dbus.service
+Requires=dbus.service
 
 [Install]
 Alias=default.target

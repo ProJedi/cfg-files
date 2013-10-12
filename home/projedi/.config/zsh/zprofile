@@ -28,4 +28,23 @@ export GPODDER_DOWNLOAD_DIR=~/.cache/gpodder
 
 eval `dircolors ~projedi/.config/dircolors`
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /usr/lib/systemd/systemd --user
+# A hacky way to copy current environment over to systemd governed services
+env | while read line; do
+   varname=`echo $line | sed -r 's/^([^=]+)=.*/\1/'`
+   varval=`echo $line | sed -r 's/^[^=]+=(.*)/\1/'`
+   if [[ $varname = "SHLVL" || \
+         $varname = "_" || \
+         $varname = "LOGNAME" || \
+         $varname = "TERM" || \
+         $varname = "DBUS_SESSION_BUS_ADDRESS" || \
+         $varname = "PWD" || \
+         $varname = "OLDPWD" || \
+         $varname = XDG* || \
+         $varname = "HOME" || \
+         $varname = "USER" ]]; then
+      continue
+   fi
+   systemctl --user set-environment "$varname=$varval"
+done
+
+[[ $XDG_VTNR -eq 1 ]] && systemctl --user wm.target

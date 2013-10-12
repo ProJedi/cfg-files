@@ -1,0 +1,4 @@
+.include /usr/lib/systemd/system/ppp@.service
+
+[Service]
+Restart=on-failure

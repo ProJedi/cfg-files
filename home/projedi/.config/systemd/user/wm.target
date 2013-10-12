@@ -1,6 +1,7 @@
 [Unit]
 Description=Window manager
-Wants=xorg.target
+After=xorg.target
+Requires=xorg.target
 Wants=mystuff.target
 Requires=dbus.socket
 AllowIsolate=true
